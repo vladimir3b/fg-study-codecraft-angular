@@ -9,7 +9,6 @@ export class Chap02RootComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
+  
 }

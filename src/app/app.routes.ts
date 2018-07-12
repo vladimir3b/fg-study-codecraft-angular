@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Routes, Route } from '@angular/router';
 
 import { PageNotFoundComponent } from './others/components/page-not-found/page-not-found.component';
 import { HomePageComponent } from './others/components/home-page/home-page.component';
@@ -14,7 +14,7 @@ const rootRoutes: Routes = [
   },
   {
     path: 'chap02',
-    component: Chap02Subchap06Component
+    component: Chap02RootComponent
   }, 
   {
     path: '**',
@@ -22,5 +22,16 @@ const rootRoutes: Routes = [
   }
 ];
 
- export const appRoutes: Routes = chap02Routes.concat(rootRoutes);
+const createRoutes = (...routeArrays: Array<Routes>): Routes => {
+  let finalRoutes: Routes = [];
+  routeArrays.forEach((routes: Routes): void => {
+    routes.forEach((route: Route): void => {
+      finalRoutes.push(route);
+    });  
+  });
+  // console.log(finalRoutes);
+  return finalRoutes;
+}
+
+export const appRoutes: Routes = createRoutes(chap02Routes, rootRoutes);
 
