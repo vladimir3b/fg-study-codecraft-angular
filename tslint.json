@@ -1,4 +1,8 @@
 {
+  "extends": [
+    "tslint:lastest",
+    "tslint-config-prettier"
+  ],
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
