@@ -7,7 +7,8 @@ import { RootComponent } from './root.component';
 import { PageNotFoundComponent } from './others/components/page-not-found/page-not-found.component';
 import { appRoutes } from './app.routes';
 import { HomePageComponent } from './others/components/home-page/home-page.component';
-import { ChapRootComponent } from './chap02/others/components/chap-root/chap-root.component';
+import { Chap02RootComponent } from './chap02/components/chap02-root/chap02-root.component';
+import { Chap02Subchap06Component } from './chap02/components/chap02-subchap06/chap02-subchap06.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ChapRootComponent } from './chap02/others/components/chap-root/chap-roo
     RootComponent,
     PageNotFoundComponent,
     HomePageComponent,
-    ChapRootComponent
+    Chap02RootComponent,
+    Chap02Subchap06Component
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

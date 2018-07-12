@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChapRootComponent } from './chap-root.component';
+import { Chap02Subchap06Component } from './chap02-subchap06.component';
 
-describe('ChapRootComponent', () => {
-  let component: ChapRootComponent;
-  let fixture: ComponentFixture<ChapRootComponent>;
+describe('Chap02Subchap06Component', () => {
+  let component: Chap02Subchap06Component;
+  let fixture: ComponentFixture<Chap02Subchap06Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChapRootComponent ]
+      declarations: [ Chap02Subchap06Component ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChapRootComponent);
+    fixture = TestBed.createComponent(Chap02Subchap06Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
