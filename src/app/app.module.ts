@@ -9,6 +9,7 @@ import { appRoutes } from './app.routes';
 import { HomePageComponent } from './others/components/home-page/home-page.component';
 import { Chap02RootComponent } from './chap02/components/chap02-root/chap02-root.component';
 import { Chap02Subchap06Component } from './chap02/components/chap02-subchap06/chap02-subchap06.component';
+import { Chap02Subchap07Component } from './chap02/components/chap02-subchap07/chap02-subchap07.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { Chap02Subchap06Component } from './chap02/components/chap02-subchap06/c
     PageNotFoundComponent,
     HomePageComponent,
     Chap02RootComponent,
-    Chap02Subchap06Component
+    Chap02Subchap06Component,
+    Chap02Subchap07Component
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
