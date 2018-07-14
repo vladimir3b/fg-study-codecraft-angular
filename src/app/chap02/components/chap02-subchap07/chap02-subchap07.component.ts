@@ -32,10 +32,7 @@ export class Chap02Subchap07Component implements OnInit {
     class Person implements IHuman{
       constructor(
         public firstName: string, 
-        public lastName: string) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-      }
+        public lastName: string) {}
 
       protected _name(): string {
         return `${this.firstName} ${this.lastName}`;
