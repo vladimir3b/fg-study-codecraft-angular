@@ -14,12 +14,13 @@ import { Chap02Subchap08Component } from './chap02/components/chap02-subchap08/c
 import { Chap02Subchap03Component } from './chap02/components/chap02-subchap03/chap02-subchap03.component';
 import { Chap02Subchap09Component } from './chap02/components/chap02-subchap09/chap02-subchap09.component';
 import { Chap04Subchap01Component } from './chap04/components/chap04-subchap01/chap04-subchap01.component';
+import { Chap04Subchap02Component } from './chap04/components/chap04-subchap02/chap04-subchap02.component';
 import { Chap04RootComponent } from './chap04/components/chap04-root/chap04-root.component';
 import { Chap04ComponentTest1Component } from './chap04/components/chap04-component-test1/chap04-component-test1.component';
 import { Chap04ComponentTest2Component } from './chap04/components/chap04-component-test2/chap04-component-test2.component';
 import { Chap04ComponentTest3Component } from './chap04/components/chap04-component-test3/chap04-component-test3.component';
 import { Chap04ComponentTest4Component } from './chap04/components/chap04-component-test4/chap04-component-test4.component';
-import { Chap04Subchap02Component } from './chap04/components/chap04-subchap02/chap04-subchap02.component';
+
 
 
 @NgModule({
