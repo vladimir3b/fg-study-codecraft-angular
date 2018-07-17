@@ -13,6 +13,7 @@ import { Chap02Subchap07Component } from './chap02/components/chap02-subchap07/c
 import { Chap02Subchap08Component } from './chap02/components/chap02-subchap08/chap02-subchap08.component';
 import { Chap02Subchap03Component } from './chap02/components/chap02-subchap03/chap02-subchap03.component';
 import { Chap02Subchap09Component } from './chap02/components/chap02-subchap09/chap02-subchap09.component';
+import { Chap02Subchap04Component } from './chap02/components/chap02-subchap04/chap02-subchap04.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { Chap02Subchap09Component } from './chap02/components/chap02-subchap09/c
     Chap02Subchap07Component,
     Chap02Subchap08Component,
     Chap02Subchap03Component,
-    Chap02Subchap09Component
+    Chap02Subchap09Component,
+    Chap02Subchap04Component
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
