@@ -13,6 +13,7 @@ import { Chap02Subchap07Component } from './chap02/components/chap02-subchap07/c
 import { Chap02Subchap08Component } from './chap02/components/chap02-subchap08/chap02-subchap08.component';
 import { Chap02Subchap03Component } from './chap02/components/chap02-subchap03/chap02-subchap03.component';
 import { Chap02Subchap09Component } from './chap02/components/chap02-subchap09/chap02-subchap09.component';
+<<<<<<< HEAD
 import { Chap04Subchap01Component } from './chap04/components/chap04-subchap01/chap04-subchap01.component';
 import { Chap04Subchap02Component } from './chap04/components/chap04-subchap02/chap04-subchap02.component';
 import { Chap04RootComponent } from './chap04/components/chap04-root/chap04-root.component';
@@ -21,6 +22,9 @@ import { Chap04ComponentTest2Component } from './chap04/components/chap04-compon
 import { Chap04ComponentTest3Component } from './chap04/components/chap04-component-test3/chap04-component-test3.component';
 import { Chap04ComponentTest4Component } from './chap04/components/chap04-component-test4/chap04-component-test4.component';
 
+=======
+import { Chap02Subchap04Component } from './chap02/components/chap02-subchap04/chap02-subchap04.component';
+>>>>>>> 06bf7063c46dbf82920c514c65292f6640398a3c
 
 
 @NgModule({
@@ -34,6 +38,7 @@ import { Chap04ComponentTest4Component } from './chap04/components/chap04-compon
     Chap02Subchap08Component,
     Chap02Subchap03Component,
     Chap02Subchap09Component,
+<<<<<<< HEAD
     Chap04Subchap01Component,
     Chap04RootComponent,
     Chap04ComponentTest1Component,
@@ -41,6 +46,9 @@ import { Chap04ComponentTest4Component } from './chap04/components/chap04-compon
     Chap04ComponentTest3Component,
     Chap04ComponentTest4Component,
     Chap04Subchap02Component
+=======
+    Chap02Subchap04Component
+>>>>>>> 06bf7063c46dbf82920c514c65292f6640398a3c
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
