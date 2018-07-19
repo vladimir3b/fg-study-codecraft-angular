@@ -1,0 +1,57 @@
+<h4>03 - Lifecycle Hooks</h4>
+<a href="https://codecraft.tv/courses/angular/components/lifecycle-hooks/" target="blank">
+  click for tutorial
+</a><hr>
+<div class="card" style="width: 28rem;"> 
+  
+    <div class="card-body">
+      <h5 class="card-title text-info">
+        Change human data
+      </h5>
+      <div>
+        <div class="form-group">
+          <label 
+            for="messageTitle" 
+            class="text-success">
+            Name
+          </label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="messageTitle" 
+            #messageTitle
+            [(ngModel)]="humanName"
+            placeholder="Enter human name...">
+        </div>
+  
+        <div class="form-group">
+          <label 
+            for="messageText" 
+            class="text-success">
+            Age
+          </label>
+          <input 
+            type="number" 
+            class="form-control" 
+            id="messageText"
+            #messageContent
+            [(ngModel)]="humanAge"
+            placeholder="Enter human age...">
+        </div>
+        <!-- <button 
+          type="button" 
+          (click)="createMessage(messageTitle.value, messageContent.value); messageForm.reset();"
+          class="btn btn-primary">
+          Send new human...
+        </button>
+   -->
+      </div>
+    </div>
+  
+  </div>
+  <hr>
+  
+<fg-app-chap04-test02
+  [human]="{name: humanName, age: humanAge}">
+</fg-app-chap04-test02>
+
