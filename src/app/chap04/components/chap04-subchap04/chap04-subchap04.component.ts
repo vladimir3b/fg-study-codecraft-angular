@@ -37,8 +37,8 @@ export class Chap04Subchap04Component implements OnInit {
     this.listOfPersons.unshift(person);
   }
 
-  public deleteAllUsers(confirm: boolean) {
-    if (confirm) {
+  public deleteAllUsers(confirm: number) {
+    if (!confirm) {
       this.listOfPersons = [];
     }
   }

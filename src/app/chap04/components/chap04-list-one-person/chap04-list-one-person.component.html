@@ -1,6 +1,20 @@
 <div class="alert alert-primary text-dark">
-  <ng-content select=".firstName"></ng-content>&nbsp;
-  <ng-content select=".lastName"></ng-content>&nbsp;
-  <ng-content select=".age"></ng-content>
+  <div class="row">
+    <div class="col">
+      <ng-content select=".firstName"></ng-content>
+    </div>
+    <div class="col">
+      <ng-content select=".lastName"></ng-content>
+    </div>
+    <div class="col">
+      <ng-content select=".age"></ng-content>
+    </div>
+    <div class="col text-right">
+      <button 
+        class="btn btn-link"
+        (click)="deleteThis()">
+         <strong>X</strong>
+      </button>
+    </div>
+  </div>
 </div>
-  

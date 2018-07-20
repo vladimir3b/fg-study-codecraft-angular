@@ -9,7 +9,7 @@ import { IPerson } from '../data.structures';
 export class Chap04ListOfPersonsComponent implements OnInit {
 
   @Input() public persons: Array<IPerson>;
-  @Output('onDeleteAllUsers') public usersDeletion: EventEmitter<boolean> =
+  @Output('onDeleteAllUsers') public usersDeletion: EventEmitter<number> =
     new EventEmitter();
 
   constructor() { }
@@ -17,8 +17,8 @@ export class Chap04ListOfPersonsComponent implements OnInit {
   ngOnInit() {
   }
 
-  public deleteAllUsers(): void {
-    this.usersDeletion.emit(true);
+  public deleteUsers(): void {
+    this.usersDeletion.emit(0);
   }
 
 }

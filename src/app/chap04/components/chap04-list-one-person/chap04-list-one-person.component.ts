@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'fg-app-chap04-list-one-person',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Chap04ListOnePersonComponent implements OnInit {
 
+  @Output('onDeleteOnePerson') public deletePerson: EventEmitter<boolean> = 
+    new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  deleteThis() {
+    this.deletePerson.emit(true);
   }
 
 }

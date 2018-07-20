@@ -3,11 +3,12 @@
 </h5>
 <button 
   class="btn btn-danger"
-  (click)="deleteAllUsers()">
+  (click)="deleteUsers()">
   <ng-content select=".button"></ng-content>
 </button>
 <hr>
 <fg-app-chap04-list-one-person
+  (onDeleteOnePerson)="deleteOnePerson(person)"
   *ngFor="let person of persons">  
   <span class="firstName">{{ person.firstName }}</span>
   <span class="lastName">{{ person.lastName }}</span>
