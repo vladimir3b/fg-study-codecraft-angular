@@ -1,0 +1,15 @@
+<h5 class="card-title text-info">
+  <ng-content select=".header"></ng-content>
+</h5>
+<button 
+  class="btn btn-danger"
+  (click)="deleteAllUsers()">
+  <ng-content select=".button"></ng-content>
+</button>
+<hr>
+<fg-app-chap04-list-one-person
+  *ngFor="let person of persons">  
+  <span class="firstName">{{ person.firstName }}</span>
+  <span class="lastName">{{ person.lastName }}</span>
+  <span class="age">{{ person.age }}</span>
+</fg-app-chap04-list-one-person>

@@ -25,7 +25,7 @@ interface IHuman {
 export class Chap04Test02Component implements 
   OnInit,
   OnChanges,
-  // DoCheck,
+  DoCheck,
   // AfterContentInit,
   // AfterContentChecked,
   // AfterViewInit,
@@ -56,9 +56,14 @@ export class Chap04Test02Component implements
     for (let key in changes) {
       console.log(changes[key]);
     }
+    console.log('------------------------------------');
     // this.message += `This is from ngOnChanges. 
     // His name is '${this.data.name}' and he is 
     // ${this.data.age} years old. =>`; 
+  }
+
+  ngDoCheck() {
+    console.log('Something has been changed...');
   }
 
   ngOnDestroy() {

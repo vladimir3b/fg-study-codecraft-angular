@@ -27,9 +27,15 @@ import { Chap04ComponentTest4Component } from './chap04/components/chap04-compon
 import { Chap04Subchap01Component } from './chap04/components/chap04-subchap01/chap04-subchap01.component';
 import { Chap04Subchap02Component } from './chap04/components/chap04-subchap02/chap04-subchap02.component';
 import { Chap04Subchap03Component } from './chap04/components/chap04-subchap03/chap04-subchap03.component';
+import { Chap04Subchap04Component } from './chap04/components/chap04-subchap04/chap04-subchap04.component';
 // --------------------------------
 import { Chap04Test01Component } from './chap04/components/chap04-test01/chap04-test01.component';
 import { Chap04Test02Component } from './chap04/components/chap04-test02/chap04-test02.component';
+import { Chap04Test03Component } from './chap04/components/chap04-test03/chap04-test03.component';
+import { Chap04NewPersonComponent } from './chap04/components/chap04-new-person/chap04-new-person.component';
+import { Chap04ListOfPersonsComponent } from './chap04/components/chap04-list-of-persons/chap04-list-of-persons.component';
+import { Chap04ListOnePersonComponent } from './chap04/components/chap04-list-one-person/chap04-list-one-person.component';
+
 
 
 @NgModule({
@@ -50,7 +56,8 @@ import { Chap04Test02Component } from './chap04/components/chap04-test02/chap04-
     // --------------------------------
     Chap04Subchap01Component,
     Chap04Subchap02Component,
-    Chap04Subchap03Component,  
+    Chap04Subchap03Component,   
+    Chap04Subchap04Component,   
     // --------------------------------
     Chap04ComponentTest1Component,
     Chap04ComponentTest2Component,
@@ -58,7 +65,12 @@ import { Chap04Test02Component } from './chap04/components/chap04-test02/chap04-
     Chap04ComponentTest4Component,
     // --------------------------------
     Chap04Test01Component,
-    Chap04Test02Component      
+    Chap04Test02Component,
+    Chap04Test03Component,
+    Chap04NewPersonComponent,
+    Chap04ListOfPersonsComponent,
+    Chap04ListOnePersonComponent  
+      
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

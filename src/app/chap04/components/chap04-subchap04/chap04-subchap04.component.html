@@ -1,0 +1,16 @@
+<button class="btn btn-link" style="padding-left: 0" routerLink="/chap04">
+  <h4>Chapter 04 - Components</h4>
+</button>
+<h5>04 - ViewChildren & ContentChildren</h5>
+<a href="https://codecraft.tv/courses/angular/components/viewchildren-and-contentchildren/" target="blank">
+  click for tutorial
+</a><hr>
+<fg-app-chap04-new-person
+  (newPersonCreated)="addNewPerson($event)">
+</fg-app-chap04-new-person>
+<fg-app-chap04-list-of-persons
+  (onDeleteAllUsers)="deleteAllUsers($event)"
+  [persons]="listOfPersons">
+  <span class="header">List of persons</span>
+  <span class="button">Delete all users...</span>  
+</fg-app-chap04-list-of-persons>
