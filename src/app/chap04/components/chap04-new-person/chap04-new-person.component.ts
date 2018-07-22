@@ -39,7 +39,7 @@ export class Chap04NewPersonComponent implements OnInit {
 
   public resetForm(): void {
     this.firstName='';
-    this._lastName.nativeElement.value='';
+    (<any>this).lastNameView='';
     this.sex = "male";
     this.age = '';
   }
@@ -57,8 +57,11 @@ export class Chap04NewPersonComponent implements OnInit {
   }
 
   public verifyAge(): boolean {
-    return (this.age >= 0) && 
-    (this.age <= 125);
+    if (this.age === '') {
+      return false;
+    } else {      
+      return (this.age >= 0) &&  (this.age <= 125);
+    }
   }
 
   public verifyData(): boolean {
