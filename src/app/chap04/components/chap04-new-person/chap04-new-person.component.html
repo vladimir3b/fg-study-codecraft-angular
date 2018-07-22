@@ -7,19 +7,67 @@
       <div>
         <div class="form-group">
           <label 
-            for="messageTitle" 
+            for="firstName" 
             class="text-success">
-            Name
+            First Name
           </label>
           <input 
             type="text" 
             class="form-control" 
-            id="messageTitle" 
-            #messageTitle
-            [(ngModel)]="humanName"
-            placeholder="Enter human name...">
+            id="firstName" 
+            [(ngModel)]="firstName"
+            placeholder="Enter person first name...">
         </div>
-  
+
+        <div class="form-group">
+          <label 
+            for="lastName" 
+            class="text-success">
+            Last Name
+          </label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="lastName"
+            #lastNameInput
+            [(ngModel)]="lastNameView"
+            placeholder="Enter person last name...">
+            <!-- 
+              #lastNameInput is use with the purpose of study
+              [(ngModel)]="lastNameView" would be enough for 
+              this to work
+             -->
+        </div>
+
+        <fieldset class="form-group">
+          <legend class="text-success">Gender</legend>
+          <div class="form-check">
+            <input 
+              class="form-check-input" 
+              type="radio" name="gender" 
+              id="gender1" 
+              value="male"
+              (change)="onGenderChange($event.target.value)"
+              [checked]="sex === 'male'">
+            <label class="form-check-label" for="gender1">
+              male
+            </label>
+          </div>
+          <div class="form-check">
+            <input 
+              class="form-check-input" 
+              type="radio" 
+              name="gender" 
+              id="gender2"
+              value="female"
+              (change)="onGenderChange($event.target.value)"
+              [checked]="sex === 'female'">
+            <label class="form-check-label" for="gender2">
+              female
+            </label>
+          </div>
+        </fieldset>        
+
         <div class="form-group">
           <label 
             for="messageText" 
@@ -31,16 +79,37 @@
             class="form-control" 
             id="messageText"
             #messageContent
-            [(ngModel)]="humanAge"
+            [(ngModel)]="age"
             placeholder="Enter human age...">
         </div>
-        <!-- <button 
-          type="button" 
-          (click)="createMessage(messageTitle.value, messageContent.value); messageForm.reset();"
-          class="btn btn-primary">
-          Send new human...
+        <div class="alert text-info" [ngClass]="verifyData() ? 'alert-info' : 'alert-danger'">          
+          <small>
+              <b *ngIf="!verifyData()" class="text-danger">
+                Please insert correct data for each '[...]'!!!<br>
+              </b>
+              You will add {{ (sex==='male') ? 'Mr.' : 'Mrs.' }}
+              <span [class]="(firstName) ? 'text-info' : 'text-danger'">
+                  {{ (firstName) ? firstName : '[...]' }} 
+              </span>
+              <span [class]="(lastNameView) ? 'text-info' : 'text-danger'">
+                  {{ (lastNameView) ? lastNameView : '[...]' }} 
+              </span>
+              who is 
+              <span [class]="(verifyAge()) ? 'text-info' : 'text-danger'">
+                  {{ (verifyAge()) ? age : '[...]' }} 
+              </span>
+              old.</small>  
+        </div>
+        <button 
+          class="btn btn-primary"
+          (click)="addNewPerson()">
+          Add new person...
+        </button>&nbsp;    
+        <button 
+          class="btn btn-danger"
+          (click)="resetForm()">
+          Reset form...
         </button>
-   -->
       </div>
     </div>
   

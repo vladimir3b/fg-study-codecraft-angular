@@ -20,5 +20,7 @@ export class Chap04ListOfPersonsComponent implements OnInit {
   public deleteUsers(): void {
     this.usersDeletion.emit(0);
   }
-
+  public deleteOnePerson(index: number): void {
+    this.persons.splice(index, 1);
+  }
 }

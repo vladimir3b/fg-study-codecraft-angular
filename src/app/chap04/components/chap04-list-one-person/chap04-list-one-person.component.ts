@@ -15,7 +15,7 @@ export class Chap04ListOnePersonComponent implements OnInit {
   }
 
   deleteThis() {
-    this.deletePerson.emit(true);
+    this.deletePerson.emit(true);    
   }
 
 }

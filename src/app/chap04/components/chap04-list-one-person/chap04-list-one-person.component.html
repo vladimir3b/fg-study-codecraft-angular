@@ -1,15 +1,18 @@
 <div class="alert alert-primary text-dark">
   <div class="row">
-    <div class="col">
+    <div class="col text-center">
       <ng-content select=".firstName"></ng-content>
     </div>
-    <div class="col">
+    <div class="col text-center">
       <ng-content select=".lastName"></ng-content>
     </div>
-    <div class="col">
+    <div class="col text-center">
+      <ng-content select=".sex"></ng-content>
+    </div>
+    <div class="col text-center">
       <ng-content select=".age"></ng-content>
     </div>
-    <div class="col text-right">
+    <div class="col-1 text-right">
       <button 
         class="btn btn-link"
         (click)="deleteThis()">

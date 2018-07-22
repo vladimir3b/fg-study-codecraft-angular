@@ -8,9 +8,10 @@
 </button>
 <hr>
 <fg-app-chap04-list-one-person
-  (onDeleteOnePerson)="deleteOnePerson(person)"
-  *ngFor="let person of persons">  
+  (onDeleteOnePerson)="deleteOnePerson(index)"
+  *ngFor="let person of persons; let index = index">  
   <span class="firstName">{{ person.firstName }}</span>
   <span class="lastName">{{ person.lastName }}</span>
+  <span class="sex">{{ (person.sex === 'male') ? 'man' : 'woman' }}</span>
   <span class="age">{{ person.age }}</span>
 </fg-app-chap04-list-one-person>

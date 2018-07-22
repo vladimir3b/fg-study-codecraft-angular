@@ -15,16 +15,19 @@ export class Chap04Subchap04Component implements OnInit {
       {
         firstName: 'John',
         lastName: 'Smith',
+        sex: 'male',
         age: 45
       },
       {
         firstName: 'Jane',
         lastName: 'Smith',
+        sex: 'female',
         age: 38
       },
       {
         firstName: 'Michael',
         lastName: 'Smith',
+        sex: 'male',
         age: 17
       },
     ]
