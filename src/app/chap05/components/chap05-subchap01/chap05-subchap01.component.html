@@ -1,0 +1,93 @@
+<button class="btn btn-link" style="padding-left: 0" routerLink="/chap05">
+  <h4>Chapter 05 - Built-in Directives </h4>
+</button>
+<h5>01 - NgFor</h5>
+<a href="https://codecraft.tv/courses/angular/built-in-directives/ngfor/" target="blank">
+  click for tutorial
+</a><hr>
+
+<div class="container">
+  <div class="row alert alert-info">
+    <div class="col">
+      Index
+    </div>
+    <div class="col">
+      First Name
+    </div>
+    <div class="col">
+      Last Name
+    </div>
+    <div class="col">
+      Gender
+    </div>
+    <div class="col">
+      Age
+    </div>
+  </div>
+  <div class="row" *ngFor="let person of persons; let index = index">
+    <div class="col text-center">
+      {{ index + 1 }}
+    </div>
+    <div class="col text-center">
+      {{ person.firstName }}
+    </div>
+    <div class="col text-center">
+      {{ person.lastName }}
+    </div>
+    <div class="col text-center">
+      {{ (person.sex==='male') ? 'man' : 'woman' }}
+    </div>
+    <div class="col text-center">
+      {{ person.age }}
+    </div>
+  </div>
+</div><hr>
+
+<div 
+  class="container"
+  *ngFor="let group of personsFromCounties">
+  <div class="row">
+    <div class="col text-right text-danger">
+      <h6>People from {{ group.countryName }}:</h6>
+    </div>
+  </div>
+  <div class="row alert alert-info">
+      <div class="col">
+        Index
+      </div>
+      <div class="col">
+        First Name
+      </div>
+      <div class="col">
+        Last Name
+      </div>
+      <div class="col">
+        Gender
+      </div>
+      <div class="col">
+        Age
+      </div>
+    </div>
+    <div class="row" *ngFor="let person of group.persons; let index = index">
+      <div class="col text-center">
+        {{ index + 1 }}
+      </div>
+      <div class="col text-center">
+        {{ person.firstName }}
+      </div>
+      <div class="col text-center">
+        {{ person.lastName }}
+      </div>
+      <div class="col text-center">
+        {{ (person.sex==='male') ? 'man' : 'woman' }}
+      </div>
+      <div class="col text-center">
+        {{ person.age }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        &nbsp;
+      </div>
+    </div>
+</div>

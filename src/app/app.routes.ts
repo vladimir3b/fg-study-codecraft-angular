@@ -7,6 +7,8 @@ import { Chap02Subchap06Component } from './chap02/components/chap02-subchap06/c
 import { chap02Routes } from './chap02/chap02.router';
 import { chap04Routes } from './chap04/chap04.router';
 import { Chap04RootComponent } from './chap04/components/chap04-root/chap04-root.component';
+import { Chap05RootComponent } from './chap05/components/chap05-root/chap05-root.component';
+import { chap05Routes } from './chap05/chap05.router';
 
 
 const rootRoutes: Routes = [
@@ -21,6 +23,10 @@ const rootRoutes: Routes = [
   {
     path: 'chap04',
     component: Chap04RootComponent
+  }, 
+  {
+    path: 'chap05',
+    component: Chap05RootComponent
   }, 
   {
     path: '**',
@@ -39,5 +45,9 @@ const createRoutes = (...routeArrays: Array<Routes>): Routes => {
   return finalRoutes;
 }
 
-export const appRoutes: Routes = createRoutes(chap02Routes, chap04Routes, rootRoutes);
+export const appRoutes: Routes = createRoutes(
+  chap02Routes, 
+  chap04Routes,  
+  chap05Routes,
+  rootRoutes);
 
