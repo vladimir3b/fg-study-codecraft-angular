@@ -3,9 +3,7 @@ import {
   OnInit, 
   ViewChildren, 
   QueryList, 
-  AfterViewInit,
-  ContentChildren,
-  AfterContentInit
+  AfterViewInit
 } from '@angular/core';
 
 import { IPerson } from '../data.structures';
@@ -20,16 +18,12 @@ import { Chap04ListOnePersonComponent } from '../chap04-list-one-person/chap04-l
 })
 export class Chap04Subchap04Component implements 
   OnInit,
-  AfterViewInit,
-  AfterContentInit {
+  AfterViewInit {
   public listOfPersons: Array<IPerson>;
 
   @ViewChildren(Chap04NewPersonComponent)
     public newPersonFromView: QueryList<Chap04NewPersonComponent>;
 
-  @ContentChildren(Chap04ListOnePersonComponent)
-    public listOfPersonsFromContent: QueryList<Chap04ListOnePersonComponent>;
-    
   constructor() { 
     this.listOfPersons = [
       {
@@ -60,16 +54,6 @@ export class Chap04Subchap04Component implements
     console.log('In ngAfterViewChecked from Chap04Subchap04Component');
     console.log('Variable persons has changed.');
     console.log(this.newPersonFromView.toArray());
-    console.log('----------------------------------------');
-  }
-
-  ngAfterContentInit() {
-    console.log('In ngAfterContentInit from Chap04Subchap04Component');
-    console.log('Variable persons has changed.');
-    console.log(this.listOfPersonsFromContent.toArray());
-    this.listOfPersonsFromContent.toArray().forEach((element: any) => {
-      console.log(element);
-    })
     console.log('----------------------------------------');
   }
 

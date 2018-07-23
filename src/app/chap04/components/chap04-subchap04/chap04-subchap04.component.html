@@ -11,6 +11,7 @@
 <fg-app-chap04-list-of-persons
   (onDeleteAllUsers)="deleteAllUsers($event)"
   [persons]="listOfPersons">
-  <span class="header">List of persons</span>
+  <span #testChild1 class="header">List of persons</span>
   <span class="button">Delete all users...</span>  
+  <fg-app-chap04-test03></fg-app-chap04-test03>
 </fg-app-chap04-list-of-persons>
