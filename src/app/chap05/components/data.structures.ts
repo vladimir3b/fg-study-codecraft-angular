@@ -7,6 +7,14 @@ interface IPerson {
   age: number;
 }
 
+interface IPersonExtended {
+  firstName: string;
+  lastName: string;
+  sex: gender;
+  age: number;
+  country: string
+}
+
 interface IPersonFromCountry {
   countryName: string;
   persons: Array<IPerson>
@@ -15,5 +23,6 @@ interface IPersonFromCountry {
 export {
   gender,
   IPerson,
-  IPersonFromCountry
+  IPersonFromCountry,
+  IPersonExtended
 }

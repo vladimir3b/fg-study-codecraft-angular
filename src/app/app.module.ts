@@ -37,6 +37,7 @@ import { Chap04ListOfPersonsComponent } from './chap04/components/chap04-list-of
 import { Chap04ListOnePersonComponent } from './chap04/components/chap04-list-one-person/chap04-list-one-person.component';
 import { Chap05RootComponent } from './chap05/components/chap05-root/chap05-root.component';
 import { Chap05Subchap01Component } from './chap05/components/chap05-subchap01/chap05-subchap01.component';
+import { Chap05Subchap02Component } from './chap05/components/chap05-subchap02/chap05-subchap02.component';
 
 
 
@@ -73,7 +74,8 @@ import { Chap05Subchap01Component } from './chap05/components/chap05-subchap01/c
     Chap04ListOfPersonsComponent,
     Chap04ListOnePersonComponent,
     Chap05RootComponent,
-    Chap05Subchap01Component  
+    Chap05Subchap01Component,
+    Chap05Subchap02Component  
       
   ],
   imports: [

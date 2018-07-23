@@ -1,0 +1,74 @@
+<button class="btn btn-link" style="padding-left: 0" routerLink="/chap05">
+  <h4>Chapter 05 - Built-in Directives </h4>
+</button>
+<h5>02 - NgIf & NgSwitch</h5>
+<a href="https://codecraft.tv/courses/angular/built-in-directives/ngif-and-ngswitch/" target="blank">
+  click for tutorial
+</a><hr>
+
+<div class="container">
+  <div class="row alert alert-info">
+    <div class="col-1">
+      <b>index</b>
+    </div>
+    <div class="col">
+      <b>first name</b>
+    </div>
+    <div class="col">
+      <b>last name</b>
+    </div>
+    <div class="col">
+      <b>gender</b>
+    </div>
+    <div class="col">
+      <b>age</b>  
+    </div>  
+    <div class="col-1">
+      <b>country</b>
+    </div>  
+  </div>
+  <div *ngFor="let person of persons;let index = index">
+    <div 
+    class="row"
+    [class.alert-success]="person.country === 'RO'"
+    [ngClass]="{
+      'alert-warning': person.country === 'UK',
+      'alert-secondary': person.country === 'US'
+    }"
+    *ngIf="!hideNations[person.country.toLowerCase()]">
+    <div class="col-1 text-right">
+      {{ index + 1 }}
+    </div>
+    <div class="col">
+      {{ person.firstName }}
+    </div>
+    <div class="col">
+      {{ person.lastName }}
+    </div>
+    <div class="col">
+      {{ person.sex }}
+    </div>
+    <div class="col">
+      {{ person.age }}
+    </div>
+    <div class="col-1">
+      {{ person.country }}
+    </div>
+  </div>
+  </div>  
+</div><br>
+<button 
+  class="btn btn-success"
+  (click)="hideNations.ro = !hideNations.ro">
+  {{ hideNations.ro ? 'show Romanians...' : 'hide Romanians...' }}
+</button>&nbsp;
+<button 
+  (click)="hideNations.uk = !hideNations.uk"
+  class="btn btn-warning">
+  {{ hideNations.uk ? 'show English people...' : 'hide English people...' }}
+</button>&nbsp;
+<button 
+  (click)="hideNations.us = !hideNations.us"
+  class="btn btn-secondary">
+  {{ hideNations.us ? 'show Americans...' : 'hide Americans...' }}
+</button>&nbsp;
