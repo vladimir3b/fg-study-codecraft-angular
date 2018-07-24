@@ -1,0 +1,68 @@
+<button class="btn btn-link" style="padding-left: 0" routerLink="/chap05">
+  <h4>Chapter 05 - Built-in Directives </h4>
+</button>
+<h5>03 - NgStyle & NgClass</h5>
+<a href="https://codecraft.tv/courses/angular/built-in-directives/ngstyle-and-ngclass/" target="blank">
+  click for tutorial
+</a><hr>
+
+<div class="card" style="width: 28rem;"> 
+  <div class="card-body">
+    <h5 class="card-title text-info">
+      Change human data
+    </h5>
+    <div class="form-group">
+      <label 
+        for="name" 
+        class="text-success">
+        Name
+      </label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="name" 
+        [(ngModel)]="name"
+        placeholder="Enter person first name...">
+    </div>
+    <fieldset class="form-group">
+      <legend class="text-success">Gender</legend>
+      <div class="form-check">
+        <input 
+          class="form-check-input" 
+          type="radio" name="gender" 
+          id="gender1" 
+          value="male"
+          (change)="sex = $event.target.value"
+          [checked]="sex === 'male'">
+        <label class="form-check-label" for="gender1">
+          male
+        </label>
+      </div>
+      <div class="form-check">
+        <input 
+          class="form-check-input" 
+          type="radio" 
+          name="gender" 
+          id="gender2"
+          value="female"
+          (change)="sex = $event.target.value"
+          [checked]="sex === 'female'">
+        <label class="form-check-label" for="gender2">
+          female
+        </label>
+      </div>
+    </fieldset>
+  </div>
+</div><br>
+
+<div class="alert"
+  [ngStyle]="{'background-color': setOutput('darkred', 'lightblue', 'pink')}">
+  {{ 
+    setOutput(
+      'You must enter a name for your person.', 
+      'Mr. ' + name + ' is a man.', 
+      'Mrs. ' + name + ' is a woman.'
+    ) 
+  }}
+  
+</div>

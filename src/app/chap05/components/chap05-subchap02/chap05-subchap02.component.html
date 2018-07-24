@@ -65,10 +65,69 @@
 <button 
   (click)="hideNations.uk = !hideNations.uk"
   class="btn btn-warning">
-  {{ hideNations.uk ? 'show English people...' : 'hide English people...' }}
+  {{ hideNations.uk ? 'show UK people...' : 'hide UK people...' }}
 </button>&nbsp;
 <button 
   (click)="hideNations.us = !hideNations.us"
   class="btn btn-secondary">
   {{ hideNations.us ? 'show Americans...' : 'hide Americans...' }}
-</button>&nbsp;
+</button><hr>
+<!-- --------------------------------------------------- -->
+<div class="alert alert-danger">
+    NOTE! &lt;span *ngSwitchCase="'US'"&gt; won't work when hiding,
+    view code...    
+</div>
+
+<div class="container">
+  <div class="row text-center">
+    <div 
+      class="col alert alert-success"
+      *ngIf="!hideNations.ro">
+      <b>Romanians</b>
+    </div>
+    <div 
+      class="col alert alert-warning"
+      *ngIf="!hideNations.uk">
+      <b>UK people</b>
+    </div>
+    <div 
+      class="col alert alert-secondary"
+      *ngIf="!hideNations.us">
+      <b>Americans</b>
+    </div>
+  </div>
+  <div 
+    class="row text-right"
+    *ngFor="let person of persons"
+    [ngSwitch]="person.country">  
+    <div 
+      class="col alert-success"
+      *ngIf="!hideNations.ro">
+      <span *ngSwitchCase="'RO'">
+        {{ person.firstName }}&nbsp;
+        {{ person.lastName }}
+      </span>
+    </div>
+    <div 
+      class="col alert-warning"
+      *ngIf="!hideNations.uk">
+      <span *ngSwitchCase="'UK'">
+        {{ person.firstName }}&nbsp;
+        {{ person.lastName }}
+      </span>
+    </div>
+    <div 
+      class="col alert-secondary"
+      *ngIf="!hideNations.us">
+      <span *ngSwitchCase="'US'">
+      <!-- 
+        if we use <span *ngSwitchDefault> it doesn't work... 
+        i don't know why 
+      -->
+        {{ person.firstName }}&nbsp;
+        {{ person.lastName }}
+      </span>
+    </div>
+  </div>
+</div>
+
