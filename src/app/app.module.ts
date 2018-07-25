@@ -42,6 +42,7 @@ import { Chap05Subchap03Component } from './chap05/components/chap05-subchap03/c
 import { Chap05Subchap04Component } from './chap05/components/chap05-subchap04/chap05-subchap04.component';
 import { Chap06Subchap01Component } from './chap06/components/chap06-subchap01/chap06-subchap01.component';
 import { Chap06RootComponent } from './chap06/components/chap06-root/chap06-root.component';
+import { Chap06Test1Directive } from './chap06/directives/chap06-test1.directive';
 
 
 
@@ -83,7 +84,8 @@ import { Chap06RootComponent } from './chap06/components/chap06-root/chap06-root
     Chap05Subchap03Component,
     Chap05Subchap04Component,
     Chap06Subchap01Component,
-    Chap06RootComponent  
+    Chap06RootComponent,
+    Chap06Test1Directive  
       
   ],
   imports: [
