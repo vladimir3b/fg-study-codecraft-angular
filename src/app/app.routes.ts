@@ -1,3 +1,4 @@
+import { chap06Routes } from './chap06/chap06.router';
 import { Routes, Route } from '@angular/router';
 
 import { PageNotFoundComponent } from './others/components/page-not-found/page-not-found.component';
@@ -9,6 +10,7 @@ import { chap04Routes } from './chap04/chap04.router';
 import { Chap04RootComponent } from './chap04/components/chap04-root/chap04-root.component';
 import { Chap05RootComponent } from './chap05/components/chap05-root/chap05-root.component';
 import { chap05Routes } from './chap05/chap05.router';
+import { Chap06RootComponent } from './chap06/components/chap06-root/chap06-root.component';
 
 
 const rootRoutes: Routes = [
@@ -28,6 +30,10 @@ const rootRoutes: Routes = [
     path: 'chap05',
     component: Chap05RootComponent
   }, 
+  {
+    path: 'chap06',
+    component: Chap06RootComponent
+  },
   {
     path: '**',
     component: PageNotFoundComponent
@@ -49,5 +55,6 @@ export const appRoutes: Routes = createRoutes(
   chap02Routes, 
   chap04Routes,  
   chap05Routes,
+  chap06Routes,
   rootRoutes);
 

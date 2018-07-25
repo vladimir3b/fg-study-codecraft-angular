@@ -54,15 +54,34 @@
     </fieldset>
   </div>
 </div><br>
-
+<h6>ngStyle Example</h6>
 <div class="alert"
-  [ngStyle]="{'background-color': setOutput('darkred', 'lightblue', 'pink')}">
+  [ngStyle]="{'background-color': setOutput('darkred', 'lightblue', 'pink')}"
+  [style.color]="setOutput('lightcoral', 'darkblue', 'darkmagenta')"
+  [style.font-size.px]="setOutput(12, 20, 23)">
   {{ 
     setOutput(
       'You must enter a name for your person.', 
       'Mr. ' + name + ' is a man.', 
       'Mrs. ' + name + ' is a woman.'
     ) 
-  }}
-  
+  }}  
+</div>
+<h6>ngClass Example</h6>
+<div class="alert"
+  [class.alert-danger]="!name"
+  [class.alert-info]="(sex === 'male') && name"
+  [class.alert-warning]="(sex === 'female') && name"
+  [ngClass]="{    
+    'text-danger': (sex === 'male') && name,
+    'text-success': (sex === 'female') && name,
+    'text-primary': !name
+  }">
+  {{ 
+    setOutput(
+      'You must enter a name for your person.', 
+      'Mr. ' + name + ' is a man.', 
+      'Mrs. ' + name + ' is a woman.'
+    ) 
+  }}  
 </div>

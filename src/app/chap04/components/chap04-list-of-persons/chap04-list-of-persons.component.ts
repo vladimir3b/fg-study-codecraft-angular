@@ -1,4 +1,4 @@
-import { Chap04Test03Component } from './../chap04-test03/chap04-test03.component';
+import { Chap04Test03Component } from '../chap04-test03/chap04-test03.component';
 import { 
   Component, 
   OnInit, 

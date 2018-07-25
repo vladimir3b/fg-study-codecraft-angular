@@ -1,0 +1,93 @@
+<button class="btn btn-link" style="padding-left: 0" routerLink="/chap05">
+  <h4>Chapter 05 - Built-in Directives </h4>
+</button>
+<h5>04 - NgNonBindable and Structural Directives</h5>
+<a href="https://codecraft.tv/courses/angular/built-in-directives/ngnonbindable/" target="blank">
+  click for tutorial
+</a> and 
+<a href="https://codecraft.tv/courses/angular/built-in-directives/structural-directives/" target="blank">
+  click for tutorial
+</a><hr>
+Here we use <strong>ngNonBindable</strong>, thus 
+<span ngNonBindable>
+  {{ message }}
+</span> =
+<span>
+  {{ message }}
+</span>
+<hr>
+Structural directive <strong>ngIf</strong> in example: 
+<pre class="alert alert-primary">
+&lt;div 
+  class="alert alert-info"
+  *ngIf="state"&gt;
+  Now you see me!!!
+&lt;/div&gt;
+</pre>
+is equivalent to
+<pre class="alert alert-primary">
+&lt;ng-template [ngIf]="state"&gt;
+  &lt;div class="alert alert-info"&gt;
+    Now you see me!!!
+  &lt;/div&gt; 
+&lt;/ng-template&gt;
+</pre>
+<button 
+  class="btn btn-info"
+  (click)="state = !state; btnText = (!state) ? 'show' : 'hide'">
+  Click to {{ btnText }} the text...
+</button><br><br>
+Thus:
+<div 
+  class="alert alert-info"
+  *ngIf="state">
+  Now you see me!!!
+</div>
+is the same thing to
+<ng-template [ngIf]="state">
+  <div class="alert alert-info">
+    Now you see me!!!
+  </div>
+</ng-template>
+<hr>
+
+Structural directive <strong>ngFor</strong> in example: 
+<pre class="alert alert-primary">
+&lt;ul&gt;
+  &lt;li *ngFor='let name of names'&gt;
+    <span ngNonBindable>{{ name }}</span>
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+is equivalent to
+<pre class="alert alert-primary">
+&lt;ul class="alert"&gt;
+  &lt;ng-template
+    ngFor
+    let-name
+    [ngForOf]="names"&gt;
+    &lt;li&gt;
+      <span ngNonBindable>{{ name }}</span>
+    &lt;/li&gt;
+  &lt;/ng-template&gt;
+&lt;/ul&gt;
+</pre>
+
+<br>
+Thus:
+<ul class="alert">
+  <li *ngFor='let name of names'>
+    {{ name }}
+  </li>
+</ul>
+is the same thing to
+<ul class="alert">
+  <ng-template
+    ngFor
+    let-name
+    [ngForOf]="names">
+    <li>
+      {{ name }}
+    </li>
+  </ng-template>
+</ul>

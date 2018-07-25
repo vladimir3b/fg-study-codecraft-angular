@@ -14,11 +14,7 @@ export class Chap05Subchap03Component implements OnInit {
 
   ngOnInit() {
   }
-  public setOutput(
-    mess1: string,
-    mess2: string,
-    mess3: string
-  ): string {
+  public setOutput<T = string>(mess1: T, mess2: T, mess3: T): T {
     if (!this.name) {
       return mess1;
     } 
