@@ -45,6 +45,8 @@ import { Chap06RootComponent } from './chap06/components/chap06-root/chap06-root
 import { Chap06Test1Directive } from './chap06/directives/chap06-test1.directive';
 import { Chap06Subchap02Component } from './chap06/components/chap06-subchap02/chap06-subchap02.component';
 import { Chap06ShowOnHoverDirective } from './chap06/directives/chap06-show-on-hover.directive';
+import { Chap06Subchap03Component } from './chap06/components/chap06-subchap03/chap06-subchap03.component';
+import { Chap06ChangeOnHoverDirective } from './chap06/directives/chap06-change-on-hover.directive';
 
 
 
@@ -89,7 +91,9 @@ import { Chap06ShowOnHoverDirective } from './chap06/directives/chap06-show-on-h
     Chap06RootComponent,
     Chap06Test1Directive,
     Chap06Subchap02Component,
-    Chap06ShowOnHoverDirective  
+    Chap06ShowOnHoverDirective,
+    Chap06Subchap03Component,
+    Chap06ChangeOnHoverDirective  
       
   ],
   imports: [
