@@ -1,0 +1,23 @@
+<button class="btn btn-link" style="padding-left: 0" routerLink="/chap05">
+  <h4>Chapter 06 - Custom Directives</h4>
+</button>
+<h5>02 - HostListener & HostBinding</h5>
+<a href="https://codecraft.tv/courses/angular/custom-directives/hostlistener-and-hostbinding/" target="blank">
+  click for tutorial
+</a>
+<hr>
+<ng-template
+  ngFor
+  let-quote
+  [ngForOf]="quotes">
+  <blockquote 
+    class="blockquote text-right alert alert-primary"
+    fgAppChap06ShowOnHover>
+    <p 
+      class="mb-0"
+      [style.display]="'none'">
+      {{ quote.text }}
+    </p>
+    <footer class="blockquote-footer">{{ quote.author }} <cite>{{ quote.year }}</cite></footer>
+  </blockquote>
+</ng-template>
