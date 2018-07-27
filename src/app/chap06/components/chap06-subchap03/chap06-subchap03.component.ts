@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Chap06Subchap03Component implements OnInit {
 
-  public borderColor: string = "#e9967a";
-  public borderThick: number = 1;
-  public borderRadius: number = 0;
+  public color: string = "#e9967a";
+  public thick: number = 5;
+  public radius: number = 10;
 
   constructor() { }
 

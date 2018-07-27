@@ -4,6 +4,13 @@ interface IQuote {
   year: number;
 }
 
+interface IBorder {
+  color: string;
+  thick: number;
+  radius: number;
+}
+
 export {
-  IQuote
+  IQuote,
+  IBorder
 }

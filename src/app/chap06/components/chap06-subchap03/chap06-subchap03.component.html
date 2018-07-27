@@ -15,24 +15,54 @@
       <label for="border" class="text-success">
         Select border color
       </label>
-      <input type="color" class="form-control" [style.height.px]="45" id="borderColor" [(ngModel)]="borderColor">
+      <input 
+        type="color" 
+        class="form-control" 
+        [style.height.px]="45" 
+        id="color" 
+        [(ngModel)]="color">
     </div>
     <div class="form-group">
       <label for="border" class="text-success">
         Select border thick
       </label>
-      <input type="number" min="0" max="15" class="form-control" id="borderThick" [(ngModel)]="borderThick">
+      <input 
+        type="number" 
+        min="0" 
+        max="15" 
+        class="form-control" 
+        id="thick" 
+        [(ngModel)]="thick">
     </div>
     <div class="form-group">
       <label for="border" class="text-success">
         Select border radius
       </label>
-      <input type="number" min="0" max="15" class="form-control" id="borderRadius" [(ngModel)]="borderRadius">
+      <input 
+        type="number" 
+        min="0" 
+        max="360" 
+        class="form-control" 
+        id="radius" 
+        [(ngModel)]="radius">
     </div>
+    <button 
+      class="btn btn-info">
+      color me...
+    </button>
   </div>
 </div><br>
-
-<div class="alert alert-primary">
+<br>
+Click <i>color me...</i> button to color the border in <span [style.color]="color">
+<b>color</b></span> with size of {{ thick }} and radius of {{ radius }}.
+<br><br>
+<div 
+  class="alert alert-primary"
+  [fgAppChap06ChangeOnHover]="{
+    color: color,
+    thick: thick,
+    radius: radius
+  }">
   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias esse quibusdam laborum vero, modi consequatur velit qui ratione
   id, odio omnis, magni quae. Aspernatur officia, nam reiciendis asperiores nobis blanditiis consectetur voluptatum, optio
   iste incidunt enim omnis minima praesentium quis fugit cumque? Dolor, cumque dolorem.
