@@ -29,7 +29,7 @@
       <input 
         type="number" 
         min="0" 
-        max="15" 
+        max="45" 
         class="form-control" 
         id="thick" 
         [(ngModel)]="thick">
@@ -45,17 +45,10 @@
         class="form-control" 
         id="radius" 
         [(ngModel)]="radius">
-    </div>
-    <button 
-      class="btn btn-info">
-      color me...
-    </button>
+    </div> 
   </div>
 </div><br>
 <br>
-Click <i>color me...</i> button to color the border in <span [style.color]="color">
-<b>color</b></span> with size of {{ thick }} and radius of {{ radius }}.
-<br><br>
 <div 
   class="alert alert-primary"
   [fgAppChap06ChangeOnHover]="{

@@ -3,7 +3,7 @@ import {
   ElementRef, 
   Renderer,
   Input,
-  OnInit
+  OnChanges
 } from '@angular/core';
 
 import { IBorder } from '../components/data.structures';
@@ -11,7 +11,7 @@ import { IBorder } from '../components/data.structures';
 @Directive({
   selector: '[fgAppChap06ChangeOnHover]'
 })
-export class Chap06ChangeOnHoverDirective implements OnInit {
+export class Chap06ChangeOnHoverDirective implements OnChanges {
   @Input('fgAppChap06ChangeOnHover') border: IBorder;
 
   constructor(
@@ -19,11 +19,7 @@ export class Chap06ChangeOnHoverDirective implements OnInit {
     private _renderer: Renderer
   ) { }
 
-  ngOnInit() {
-
-  }
-
-  public changeBorder(): void {
+  public ngOnChanges(): void {
     this._renderer.setElementStyle(
       this._element.nativeElement,
       'border-color',
