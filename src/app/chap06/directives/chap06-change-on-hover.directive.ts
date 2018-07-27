@@ -18,10 +18,10 @@ export class Chap06ChangeOnHoverDirective implements OnInit {
     private _element: ElementRef,
     private _renderer: Renderer
   ) { }
-  
-   ngOnInit() {
 
-   }
+  ngOnInit() {
+
+  }
 
   public changeBorder(): void {
     this._renderer.setElementStyle(
