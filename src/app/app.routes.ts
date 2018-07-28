@@ -11,6 +11,20 @@ import { Chap04RootComponent } from './chap04/components/chap04-root/chap04-root
 import { Chap05RootComponent } from './chap05/components/chap05-root/chap05-root.component';
 import { chap05Routes } from './chap05/chap05.router';
 import { Chap06RootComponent } from './chap06/components/chap06-root/chap06-root.component';
+import { Chap07RootComponent } from './chap07/components/chap07-root/chap07-root.component';
+import { Chap08RootComponent } from './chap08/components/chap08-root/chap08-root.component';
+import { Chap09RootComponent } from './chap09/components/chap09-root/chap09-root.component';
+import { Review1RootComponent } from './review1/components/review1-root/review1-root.component';
+import { Review2RootComponent } from './review2/components/review2-root/review2-root.component';
+import { Review3RootComponent } from './review3/components/review3-root/review3-root.component';
+import { chap07Routes } from './chap07/chap07.router';
+import { chap08Routes } from './chap08/chap08.router';
+import { chap09Routes } from './chap09/chap09.router';
+import { review1Routes } from './review1/review1.router';
+import { review2Routes } from './review2/review2.router';
+import { review3Routes } from './review3/review3.router';
+import { Chap01RootComponent } from './chap01/components/chap01-root/chap01-root.component';
+import { chap01Routes } from './chap01/chap01.router';
 
 
 const rootRoutes: Routes = [
@@ -18,6 +32,10 @@ const rootRoutes: Routes = [
     path: '',
     component: HomePageComponent
   },
+  {
+    path: 'chap01',
+    component: Chap01RootComponent
+  }, 
   {
     path: 'chap02',
     component: Chap02RootComponent
@@ -33,6 +51,30 @@ const rootRoutes: Routes = [
   {
     path: 'chap06',
     component: Chap06RootComponent
+  },
+  {
+    path: 'chap07',
+    component: Chap07RootComponent
+  },
+  {
+    path: 'chap08',
+    component: Chap08RootComponent
+  },
+  {
+    path: 'chap09',
+    component: Chap09RootComponent
+  },
+  {
+    path: 'review1',
+    component: Review1RootComponent
+  },
+  {
+    path: 'review2',
+    component: Review2RootComponent
+  },
+  {
+    path: 'review3',
+    component: Review3RootComponent
   },
   {
     path: '**',
@@ -52,9 +94,16 @@ const createRoutes = (...routeArrays: Array<Routes>): Routes => {
 }
 
 export const appRoutes: Routes = createRoutes(
+  chap01Routes,
   chap02Routes, 
   chap04Routes,  
   chap05Routes,
   chap06Routes,
+  chap07Routes,
+  chap08Routes,
+  chap09Routes,
+  review1Routes,
+  review2Routes,
+  review3Routes,
   rootRoutes);
 
