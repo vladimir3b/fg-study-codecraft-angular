@@ -6,7 +6,22 @@
   Using Renderer2 in Angular
 </a>
 <hr>
-<div fgAppReview2CloseElement>
-  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident eos odit quas deserunt minus ratione distinctio libero
-  voluptates consequatur perspiciatis nemo facere voluptate, alias eum?
-</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+    </div>
+  </div>
+</div>  
+
+<blockquote fgAppReview2DeleteElement
+  *ngFor="let quote of quotes"
+  class="blockquote text-right alert alert-primary">
+  <p class="mb-0">{{ quote.text }}</p>
+  <footer class="blockquote-footer">
+    {{ quote.author }} 
+    <cite [fgAppReview2DeleteElement]="true">
+      {{ quote.year }}
+    </cite>
+  </footer>
+</blockquote>
