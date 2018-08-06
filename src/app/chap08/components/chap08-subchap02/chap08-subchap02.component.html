@@ -6,3 +6,10 @@
   click for tutorial
 </a>
 <hr>
+<div class="alert alert-info">
+  <strong>Without async:</strong> {{ message1 }}
+</div>
+
+<div class="alert alert-info">
+  <strong>With async:</strong> {{ (promise | async) ?  'Jane is ' + (promise | async) + ' years old.' : 'Waiting for the server...'}}
+</div>

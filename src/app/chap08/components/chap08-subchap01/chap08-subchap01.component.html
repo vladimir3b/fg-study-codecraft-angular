@@ -6,3 +6,77 @@
   click for tutorial
 </a>
 <hr>
+<div class="alert alert-info">
+  <b>Currency pipe:</b>
+  {{ 3.14159265359 | currency : 'GBP' : 'code' }} -
+  {{ 31415926.5359 | currency : 'GBP' : 'symbol' }} -
+  {{ 31415926.5359 | currency : 'USD' : 'symbol-narrow' }} -
+  {{ 31415926.5359 | currency : 'USD' : 'code' }} -
+  {{ 31415926.5359 | currency : 'RON' : 'symbol' }} -
+  {{ 31415926.5359 | currency : 'EUR' : 'code' }} -
+  {{ 31415926.5359 | currency : 'EUR' : 'symbol' }}
+</div>
+
+<div class="alert alert-info">
+  <b>Date pipe:</b>
+  {{ currentDate }} -
+  {{ currentDate | date }} -
+  {{ currentDate | date : 'shortTime' }} -
+  {{ currentDate | date : 'fullDate' }} -
+  {{ currentDate | date : 'd/M/y' }}
+</div>
+
+<div class="alert alert-info">
+  <b>Decimal pipe:</b>
+  {{ 3.14159265359 | number: '3.4-5' }}
+</div>
+
+<div class="alert alert-info">
+  <b>Percent pipe:</b>
+  {{ 0.314159265359 | percent }} - 
+  {{ 0.314159265359 | percent : '2.2-3' }} - 
+  {{ 3141.59265359 | percent : '8.5'}}
+</div>
+
+<div class="alert alert-info">
+  <b>JSON pipe:</b>
+  {{ person }} -
+  {{ person | json }} -
+</div>
+
+<div class="alert alert-info">
+  <b>Lowercase pipe:</b>
+  {{ 'person Ion Iliescu' }} -
+  {{ 'person Ion Iliescu' | lowercase}} 
+</div>
+
+<div class="alert alert-info">
+  <b>Uppercase pipe:</b>
+  {{ 'person Ion Iliescu' }} -
+  {{ 'person Ion Iliescu' | uppercase}} 
+</div>
+
+
+<div class="alert alert-info">
+  <b>Slice pipe:</b>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text">First and last elements</span>
+    </div>
+    <input 
+      type="number" 
+      [(ngModel)]="min"
+      class="form-control">
+    <input 
+      type="number" 
+      [(ngModel)]="max"
+      class="form-control">    
+  </div>
+  <ul class="list-group list-group-flush">
+    <li
+      class="list-group-item"
+      *ngFor="let element of vector | slice : min-1 : max">
+      {{ element }}
+    </li>
+  </ul>
+</div>
