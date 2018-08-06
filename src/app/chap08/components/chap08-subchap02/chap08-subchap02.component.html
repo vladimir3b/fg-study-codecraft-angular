@@ -6,10 +6,22 @@
   click for tutorial
 </a>
 <hr>
+<h6>Async pipe with promises</h6>
 <div class="alert alert-info">
   <strong>Without async:</strong> {{ message1 }}
 </div>
 
 <div class="alert alert-info">
-  <strong>With async:</strong> {{ (promise | async) ?  'Jane is ' + (promise | async) + ' years old.' : 'Waiting for the server...'}}
+  <strong>With async:</strong> 
+  {{ (promise | async) ?  'Jane is ' + (promise | async) + ' years old.' : 'Waiting for the server...'}}
+</div><br>
+
+<h6>Async pipe with observables</h6>
+<div class="alert alert-warning">
+  <strong>Without async:</strong> {{ message2 }}
 </div>
+
+<div class="alert alert-warning">
+    <strong>With async:</strong> 
+    {{ (observable | async) ?  'Elisa is ' + (observable | async) + ' years old.' : 'Waiting for the server...'}}
+  </div>
