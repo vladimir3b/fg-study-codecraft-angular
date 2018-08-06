@@ -34,9 +34,6 @@ export class Review1Subchap01Component implements OnInit {
     let test01: Test01 = new Test01();
 
     (<any>test01).log(test01.prop1());
-
-    // console.log(test01);
-    
-    
+       
   }
 }
