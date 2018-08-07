@@ -10,7 +10,7 @@ import { myMath } from '../../../others/libraries/typescript/math';
   styleUrls: ['./chap08-subchap02.component.scss']
 })
 export class Chap08Subchap02Component implements 
-  OnInit
+  OnInit,
   OnDestroy {
   public message1: string = 'Wait a litte...';
   public message2: string = 'Wait a litte...';
