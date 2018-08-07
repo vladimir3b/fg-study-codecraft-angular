@@ -6,3 +6,70 @@
   click for tutorial
 </a>
 <hr>
+
+<form novalidate>
+  <div class="form-row">
+
+    <!-- ------------------ Name ------------------ -->
+
+    <fieldset 
+      formGroupName="name">
+      <div class="form-group col-md-12">
+        <label for="firstName">First Name</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="firstName" 
+          placeholder="first name...">
+      </div>
+      <div class="form-group col-md-12">
+        <label for="lastName">Last Name</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="lastName" 
+          placeholder="last name...">
+      </div>
+    </fieldset>
+
+
+
+    <!-- ------------------ Account login ------------------ -->
+    <fieldset formGroupName="account">
+      <div class="form-group col-md-6">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          class="form-control" 
+          id="email" 
+          placeholder="email...">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          class="form-control" 
+          id="password" 
+          placeholder="password...">
+      </div>     
+    </fieldset>
+
+
+  <!-- ------------------ Language ------------------ -->
+
+    <div class="form-group">
+      <label for="language">State</label>
+      <select id="language" class="form-control">
+        <option selected>choose language...</option>
+        <option 
+          *ngFor="let language of languages"
+          [value]="language">
+          {{ language }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>&nbsp;
+  <button type="reset" class="btn btn-danger">Reset</button>
+  
+</form>

@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { RootComponent } from './root.component';
@@ -162,6 +164,7 @@ import { DefaultPipe } from './chap08/pipes/default.pipe';
   imports: [
     RouterModule.forRoot(appRoutes),
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule
   ],
   providers: [],

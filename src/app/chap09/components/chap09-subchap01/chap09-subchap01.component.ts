@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Chap09Subchap01Component implements OnInit {
 
+  public languages: Array<string> = [];
+
   constructor() { }
 
   ngOnInit() {
+    [ 
+      'English',
+      'German',
+      'French',
+      'Spanish',
+      'Portuguese',
+      'Romanian'
+    ].forEach((language: string) => {
+      this.languages.unshift(language);
+    });
   }
 
 }
