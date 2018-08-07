@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chap08-subchap03.component.scss']
 })
 export class Chap08Subchap03Component implements OnInit {
-
+  public imageURL: string = '';
   constructor() { }
 
   ngOnInit() {

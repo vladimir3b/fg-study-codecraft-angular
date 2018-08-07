@@ -6,3 +6,15 @@
   click for tutorial
 </a>
 <hr>
+<div class="alert alert-info">
+  <i>insert an image URL or accept the default...</i> 
+  <input 
+    type="text"
+    class="form-control"
+    [(ngModel)] = "imageURL"
+    >
+</div> 
+
+<img 
+  [src]="imageURL | default : 'https://picsum.photos/640/480/?random' : true" 
+  alt="">

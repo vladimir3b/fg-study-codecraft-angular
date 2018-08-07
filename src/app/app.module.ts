@@ -77,6 +77,7 @@ import { Chap02Subchap02Component } from './chap02/components/chap02-subchap02/c
 import { Chap01Subchap01Component } from './chap01/components/chap01-subchap01/chap01-subchap01.component';
 import { Chap01RootComponent } from './chap01/components/chap01-root/chap01-root.component';
 import {  Review2DeleteElementDirective } from './review2/directives/review2-delete-element.directive';
+import { DefaultPipe } from './chap08/pipes/default.pipe';
 
 
 
@@ -154,7 +155,8 @@ import {  Review2DeleteElementDirective } from './review2/directives/review2-del
     Chap02Subchap02Component,
     Chap01Subchap01Component,
     Chap01RootComponent,
-    Review2DeleteElementDirective 
+    Review2DeleteElementDirective,
+    DefaultPipe 
       
   ],
   imports: [
