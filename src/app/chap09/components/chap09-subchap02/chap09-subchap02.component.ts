@@ -1,3 +1,4 @@
+import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Chap09Subchap02Component implements OnInit {
 
+  public languages: Array<string> = [];
+  public myForm: FormGroup;
+
   constructor() { }
 
   ngOnInit() {
+    [ 
+      'English',
+      'German',
+      'French',
+      'Spanish',
+      'Portuguese',
+      'Romanian'
+    ].forEach((language: string) => {
+      this.languages.unshift(language);
+    });
+    this.myForm = new FormGroup({
+      name: new FormGroup({
+        firstName: new FormControl(),
+        lastName: new FormControl()
+      }),
+      account: new FormGroup({
+        email: new FormControl(),
+        password: new FormControl()
+      }),    
+      language: new FormControl()
+    });
   }
+
 
 }

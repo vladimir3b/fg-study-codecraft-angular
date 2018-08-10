@@ -6,3 +6,94 @@
   click for tutorial
 </a>
 <hr>
+
+
+<form 
+  novalidate 
+  [formGroup]="myForm">
+
+
+  <!-- ------------------ Name ------------------ -->
+
+  <fieldset 
+    formGroupName="name" 
+    class="form-group row">
+
+    <div class="col-md-12">
+      <label for="firstName">First Name</label>
+      <input 
+        type="text"
+        class="form-control" 
+        id="firstName"
+        formControlName="firstName"
+        placeholder="first name...">
+    </div>
+
+    <div class="col-md-12">
+      <label for="lastName">Last Name</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="lastName" 
+        formControlName="lastName"
+        placeholder="last name...">
+    </div>      
+  </fieldset>
+
+
+
+  <!-- ------------------ Account login ------------------ -->
+  <div 
+    formGroupName="account"
+    class="form-group row">
+   
+    <div class="col-md-6">
+      <label for="email">Email</label>
+      <input 
+        type="email" 
+        class="form-control" 
+        id="email" 
+        formControlName="email"
+        placeholder="email...">
+    </div>
+
+    <div class="col-md-6">
+      <label for="password">Password</label>
+      <input 
+        type="password" 
+        class="form-control" 
+        id="password" 
+        formControlName="password"
+        placeholder="password...">
+    </div>  
+
+  </div>
+
+
+  <!-- ------------------ Language ------------------ -->
+
+  <div class="form-group row">
+    <div class="col-md-12">
+        <label for="language">Language</label>
+        <select 
+          id="language" 
+          formControlName="language"
+          class="form-control">
+          <option selected>choose language...</option>
+          <option 
+            *ngFor="let language of languages"
+            [value]="language">
+            {{ language }}
+          </option>
+        </select>
+    </div>
+  </div>
+
+<button type="submit" class="btn btn-primary">Sign in</button>&nbsp;
+<button type="reset" class="btn btn-danger">Reset</button>
+
+</form> <br>
+
+<pre class="alert alert-warning">
+{{ myForm.value | json }}
+</pre>
