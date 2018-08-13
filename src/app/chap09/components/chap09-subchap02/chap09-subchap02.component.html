@@ -52,9 +52,19 @@
       <input 
         type="email" 
         class="form-control" 
+        [ngClass]="{
+          'is-valid' : validate('email').isValid,
+          'is-invalid': invalidate('email').isInvalid
+        }"
         id="email" 
         formControlName="email"
         placeholder="email...">
+      <div class="valid-feedback">
+        {{ validate('email').message }}
+      </div>
+      <div class="invalid-feedback">
+        {{ invalidate('email').message }}
+      </div>
 
       <div 
         class="alert alert-info"
@@ -87,6 +97,21 @@
           </strong>        
           {{ myForm.controls.account.controls.email.untouched }}        
         </div>    
+
+        <div>
+          <strong>        
+            valid = 
+          </strong>        
+          {{ myForm.controls.account.controls.email.valid }}        
+        </div>    
+
+        <div>
+          <strong>        
+            invalid = 
+          </strong>        
+          {{ myForm.controls.account.controls.email.invalid }}        
+        </div>  
+
       </div>
     </div>
 
