@@ -55,6 +55,39 @@
         id="email" 
         formControlName="email"
         placeholder="email...">
+
+      <div 
+        class="alert alert-info"
+        *ngIf="showDebug">
+        <h6>Debug variables for email</h6>
+        <div>
+          <strong>        
+            dirty = 
+          </strong>        
+          {{ myForm.controls.account.controls.email.dirty }}        
+        </div>
+  
+        <div>
+          <strong>        
+            pristine = 
+          </strong>        
+          {{ myForm.controls.account.controls.email.pristine }}        
+        </div>
+  
+        <div>
+          <strong>        
+            touched = 
+          </strong>        
+          {{ myForm.controls.account.controls.email.touched }}        
+        </div>
+  
+        <div>
+          <strong>        
+            untouched = 
+          </strong>        
+          {{ myForm.controls.account.controls.email.untouched }}        
+        </div>    
+      </div>
     </div>
 
     <div class="col-md-6">
@@ -90,8 +123,12 @@
   </div>
 
 <button type="submit" class="btn btn-primary">Sign in</button>&nbsp;
-<button type="reset" class="btn btn-danger">Reset</button>
-
+<button type="reset" class="btn btn-danger">Reset</button>&nbsp;
+<button 
+  class="btn btn-info"
+  (click)="showDebug = !showDebug">
+  {{ (showDebug) ? 'Hide' : 'Show'}} debug...
+</button>
 </form> <br>
 
 <pre class="alert alert-warning">

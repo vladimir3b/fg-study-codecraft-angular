@@ -1,4 +1,4 @@
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Chap09Subchap02Component implements OnInit {
 
+  public showDebug = true;
   public languages: Array<string> = [];
   public myForm: FormGroup;
 
   constructor() { }
 
   ngOnInit() {
-    [ 
+    [  
       'English',
       'German',
       'French',
@@ -26,12 +27,18 @@ export class Chap09Subchap02Component implements OnInit {
     });
     this.myForm = new FormGroup({
       name: new FormGroup({
-        firstName: new FormControl(),
-        lastName: new FormControl()
+        firstName: new FormControl('', Validators.required),
+        lastName: new FormControl('',  Validators.required)
       }),
       account: new FormGroup({
-        email: new FormControl(),
-        password: new FormControl()
+        email: new FormControl('', [
+          Validators.required,
+          Validators.pattern("[^ @]*@[^ @]*")
+        ]),
+        password: new FormControl('', [
+          Validators.required,
+          Validators.minLength(8)
+        ])
       }),    
       language: new FormControl()
     });
