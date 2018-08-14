@@ -23,10 +23,20 @@
       <label for="firstName">First Name</label>
       <input 
         type="text"
-        class="form-control" 
+        class="form-control"
+        [ngClass]="{
+          'is-valid' : validate('firstName').isValid,
+          'is-invalid': invalidate('firstName').isInvalid
+        }"
         id="firstName"
         formControlName="firstName"
         placeholder="first name...">
+      <div class="valid-feedback">
+        {{ validate('firstName').message }}
+      </div>
+      <div class="invalid-feedback">
+        {{ invalidate('firstName').message }}
+      </div>
     </div>
 
     <div class="col-md-12">
@@ -34,9 +44,19 @@
       <input 
         type="text" 
         class="form-control" 
+        [ngClass]="{
+          'is-valid' : validate('lastName').isValid,
+          'is-invalid': invalidate('lastName').isInvalid
+        }"
         id="lastName" 
         formControlName="lastName"
         placeholder="last name...">
+      <div class="valid-feedback">
+        {{ validate('lastName').message }}
+      </div>
+      <div class="invalid-feedback">
+        {{ invalidate('lastName').message }}
+      </div>
     </div>      
   </fieldset>
 
@@ -119,10 +139,20 @@
       <label for="password">Password</label>
       <input 
         type="password" 
-        class="form-control" 
+        class="form-control"
+        [ngClass]="{
+          'is-valid' : validate('password').isValid,
+          'is-invalid': invalidate('password').isInvalid
+        }"
         id="password" 
         formControlName="password"
         placeholder="password...">
+      <div class="valid-feedback">
+        {{ validate('password').message }}
+      </div>
+      <div class="invalid-feedback">
+        {{ invalidate('password').message }}
+      </div>
     </div>  
 
   </div>
@@ -156,6 +186,3 @@
 </button>
 </form> <br>
 
-<pre class="alert alert-warning">
-{{ myForm.value | json }}
-</pre>

@@ -62,6 +62,23 @@ export class Chap09Subchap02Component implements OnInit {
     };
 
     switch (key) {
+
+      case 'firstName': 
+        validator.isValid = 
+          (<any>this.myForm.controls.name).controls.firstName.valid  && 
+          ((<any>this.myForm.controls.name).controls.firstName.dirty ||
+          (<any>this.myForm.controls.name).controls.firstName.touched);   
+        validator.message = 'The first name seems to be correct.';
+        break; 
+
+      case 'lastName': 
+        validator.isValid = 
+          (<any>this.myForm.controls.name).controls.lastName.valid  && 
+          ((<any>this.myForm.controls.name).controls.lastName.dirty ||
+          (<any>this.myForm.controls.name).controls.lastName.touched);   
+        validator.message = 'The last name seems to be correct.';
+        break; 
+
       case 'email': 
         validator.isValid = 
           (<any>this.myForm.controls.account).controls.email.valid  && 
@@ -69,7 +86,14 @@ export class Chap09Subchap02Component implements OnInit {
           (<any>this.myForm.controls.account).controls.email.touched);   
         validator.message = 'The email seems to be correct.';
         break;     
-
+      
+      case 'password': 
+        validator.isValid = 
+          (<any>this.myForm.controls.account).controls.password.valid  && 
+          ((<any>this.myForm.controls.account).controls.password.dirty ||
+          (<any>this.myForm.controls.account).controls.password.touched);   
+        validator.message = 'The password seems to be correct.';
+        break;  
     }
 
     return validator;
@@ -83,6 +107,23 @@ export class Chap09Subchap02Component implements OnInit {
     };
 
     switch (key) {
+
+      case 'firstName': 
+        invalidator.isInvalid =
+          (<any>this.myForm.controls.name).controls.firstName.invalid  && 
+          ((<any>this.myForm.controls.name).controls.firstName.dirty ||
+          (<any>this.myForm.controls.name).controls.firstName.touched);      
+          invalidator.message = 'The first name is required';
+        break;
+
+      case 'lastName': 
+        invalidator.isInvalid =
+          (<any>this.myForm.controls.name).controls.lastName.invalid  && 
+          ((<any>this.myForm.controls.name).controls.lastName.dirty ||
+          (<any>this.myForm.controls.name).controls.lastName.touched);      
+          invalidator.message = 'The last name is required';
+        break;
+
       case 'email': 
         invalidator.isInvalid =
           (<any>this.myForm.controls.account).controls.email.invalid  && 
@@ -94,11 +135,24 @@ export class Chap09Subchap02Component implements OnInit {
               'The email is required' : 'The email must contain at least a @ character.';
           } else {
             invalidator.message ='';
-          }
-          
+          }         
+        break;
+      
+      case 'password':
+        invalidator.isInvalid = 
+          (<any>this.myForm.controls.account).controls.password.invalid  && 
+          ((<any>this.myForm.controls.account).controls.password.dirty ||
+          (<any>this.myForm.controls.account).controls.password.touched);      
+          if ((<any>this.myForm.controls.account).controls.password.errors) {
+            invalidator.message = 
+              (<any>this.myForm.controls.account).controls.password.errors.required ? 
+              'The password is required' : 'The password must contain at least 8 characters.';
+          } else {
+            invalidator.message ='';
+          }         
         break;
     } 
-    return invalidator
+    return invalidator;
   }
 
 }
