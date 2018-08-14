@@ -1,4 +1,8 @@
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { 
+  FormGroup, 
+  FormControl, 
+  Validators 
+} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 interface IValidator {

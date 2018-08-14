@@ -6,3 +6,20 @@
   click for tutorial
 </a>
 <hr>
+
+<input 
+  type="text"
+  class="form-control"
+  [formControl]="searchField"
+  placeholder="please enter the search term..."><br>
+
+<div *ngIf="searches.length">
+  <h6>You have searched for...</h6>
+  <ul class="list-group">
+    <li 
+      class="list-group-item"
+      *ngFor="let search of searches">
+      {{ search }}
+    </li> 
+  </ul>
+</div>

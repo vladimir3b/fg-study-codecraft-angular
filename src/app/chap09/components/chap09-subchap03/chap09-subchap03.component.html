@@ -6,3 +6,148 @@
   click for tutorial
 </a>
 <hr>
+
+
+<form 
+  novalidate 
+  [formGroup]="myForm"
+  (ngSubmit)="onSubmit()">
+
+
+  <!-- ------------------ Name ------------------ -->
+
+  <fieldset 
+    formGroupName="name" 
+    class="form-group row">
+
+    <div class="col-md-12">
+      <label for="firstName">First Name</label>
+      <input 
+        type="text"
+        class="form-control"
+        [ngClass]="{
+          'is-valid' : validate('firstName').isValid,
+          'is-invalid': invalidate('firstName').isInvalid
+        }"
+        id="firstName"
+        formControlName="firstName"
+        placeholder="first name...">
+      <div class="valid-feedback">
+        {{ validate('firstName').message }}
+      </div>
+      <div class="invalid-feedback">
+        {{ invalidate('firstName').message }}
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <label for="lastName">Last Name</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        [ngClass]="{
+          'is-valid' : validate('lastName').isValid,
+          'is-invalid': invalidate('lastName').isInvalid
+        }"
+        id="lastName" 
+        formControlName="lastName"
+        placeholder="last name...">
+      <div class="valid-feedback">
+        {{ validate('lastName').message }}
+      </div>
+      <div class="invalid-feedback">
+        {{ invalidate('lastName').message }}
+      </div>
+    </div>      
+  </fieldset>
+
+
+
+  <!-- ------------------ Account login ------------------ -->
+  <div 
+    formGroupName="account"
+    class="form-group row">
+   
+    <div class="col-md-6">
+      <label for="email">Email</label>
+      <input 
+        type="email" 
+        class="form-control" 
+        [ngClass]="{
+          'is-valid' : validate('email').isValid,
+          'is-invalid': invalidate('email').isInvalid
+        }"
+        id="email" 
+        formControlName="email"
+        placeholder="email...">
+      <div class="valid-feedback">
+        {{ validate('email').message }}
+      </div>
+      <div class="invalid-feedback">
+        {{ invalidate('email').message }}
+      </div>
+
+      <div 
+        class="alert alert-info"
+        *ngIf="showDebug">
+        <h6>Debug variables for email</h6>
+        <div>
+          <strong>        
+            dirty = 
+          </strong>        
+          {{ myForm.controls.account.controls.email.dirty }}        
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="password">Password</label>
+      <input 
+        type="password" 
+        class="form-control"
+        [ngClass]="{
+          'is-valid' : validate('password').isValid,
+          'is-invalid': invalidate('password').isInvalid
+        }"
+        id="password" 
+        formControlName="password"
+        placeholder="password...">
+      <div class="valid-feedback">
+        {{ validate('password').message }}
+      </div>
+      <div class="invalid-feedback">
+        {{ invalidate('password').message }}
+      </div>
+    </div>  
+
+  </div>
+
+
+  <!-- ------------------ Language ------------------ -->
+
+  <div class="form-group row">
+    <div class="col-md-12">
+        <label for="language">Language</label>
+        <select 
+          id="language" 
+          formControlName="language"
+          class="form-control">
+          <option selected>choose language...</option>
+          <option 
+            *ngFor="let language of languages"
+            [value]="language">
+            {{ language }}
+          </option>
+        </select>
+    </div>
+  </div>
+
+  <button 
+    type="submit" 
+    class="btn btn-primary"
+    [disabled]="myForm.invalid">
+    Sign in
+  </button>&nbsp;
+  <button type="reset" class="btn btn-danger">Reset</button>&nbsp;
+</form> <br>
+
