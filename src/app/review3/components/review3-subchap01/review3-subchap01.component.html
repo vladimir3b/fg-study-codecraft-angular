@@ -11,47 +11,83 @@
   <div class="form-group row">
     <label 
       for="username" 
-      class="col-md-2 col-from-label">
+      class="col-md-2 col-from-label text-md-right text-left">
       Username:
     </label>
-    <input
-      class="col-md-10 form-control"
-      type="text"
-      id="username"
-      (keyup) = "localStore('username', $event.target.value)"
-      [value] = "(stored['username']) ? stored['username'] : ''"
-      placeholder="Please enter the username...">
+    <div class="col-md-10">
+      <input
+        class="form-control"
+        [ngClass]="{
+          'is-valid': validate('username').isValid,
+          'is-invalid': invalidate('username').isInvalid
+        }"
+        type="text"
+        id="username"
+        formControlName="username"
+        (keyup)="localStore('username', $event.target.value)"
+        placeholder="Please enter the username...">
+      <div class="valid-feedback">
+        {{ validate('username').message }}
+      </div>
+      <div class="invalid-feedback">
+        {{ invalidate('username').message }}
+      </div>
+    </div>    
   </div>
 
   <div class="form-group row">
     <label 
       for="email" 
-      class="col-md-2 col-from-label">
+      class="col-md-2 col-from-label text-md-right text-left">
       Email:
     </label>
-    <input
-      class="col-md-10 form-control"
-      type="email"
-      id="email"
-      (keyup) = "localStore('email', $event.target.value)"
-      [value] = "(stored['email']) ? stored['email'] : ''"
-      placeholder="Please enter the email...">
+    <div class="col-md-10">
+      <input
+        class="form-control"
+        [ngClass]="{
+          'is-valid': validate('email').isValid,
+          'is-invalid': invalidate('email').isInvalid
+        }"
+        type="email"
+        id="email"
+        formControlName="email"
+        (keyup) = "localStore('email', $event.target.value)"
+        placeholder="Please enter the email...">
+      <div class="valid-feedback">
+        {{ validate('email').message }}
+      </div>
+      <div class="invalid-feedback">
+        {{ invalidate('email').message }}
+      </div>
+    </div>    
   </div>
 
   <div class="form-group row">
     <label 
       for="message" 
-      class="col-md-2 col-from-label">
+      class="col-md-2 col-from-label text-md-right text-left">
       Message:
     </label>
-    <textarea
-      class="col-md-10 form-control"
-      id="message"
-      rows="4"
-      maxlength="255"
-      (keyup) = "localStore('message', $event.target.value)"
-      [value] = "(stored['message']) ? stored['message'] : ''"
-      placeholder="Please enter your message..."></textarea>
+    <div class="col-md-10">
+      <textarea
+        class="form-control"
+        [ngClass]="{
+          'is-valid': validate('message').isValid,
+          'is-invalid': invalidate('message').isInvalid
+        }"
+        id="message"
+        formControlName="message"
+        rows="4"
+        maxlength="255"
+        (keyup) = "localStore('message', $event.target.value)"
+        placeholder="Please enter your message..."></textarea>
+      <div class="valid-feedback">
+        {{ validate('message').message }}
+      </div>
+      <div class="invalid-feedback">
+        {{ invalidate('message').message }}
+      </div>
+    </div>   
   </div>
 
   <div class="form-group row">
@@ -75,9 +111,10 @@
 
   <div class="d-none d-md-block">
     <div class="row">
-      <div class="col-md-2 text-right">
+      <div class="col-md-2 text-md-right text-left">
         <button 
           type="submit" 
+          [disabled]="messageForm.invalid"
           class="btn btn-primary">
           Submit
         </button>
@@ -97,6 +134,7 @@
       <div class="row">
         <button 
           type="submit" 
+          [disabled]="messageForm.invalid"
           class="col-12 btn btn-primary">
           Submit
         </button>
@@ -115,6 +153,6 @@
         </button>
       </div>
     </div>
-
   
 </form>
+
