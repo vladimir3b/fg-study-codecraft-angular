@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 const LOCAL_STORAGE_PREFIX: string = 'fg-cc-study-';
@@ -27,6 +27,7 @@ interface IInvalidator {
 })
 export class Review3Subchap01Component implements  OnInit {
 
+  @ViewChild('activateLocalStorageInput') public activateLocalStorageInput: ElementRef;
   public messageForm: FormGroup;
   public stored: IStored = {};
   public activateLocalStorage: boolean = true;
@@ -59,29 +60,14 @@ export class Review3Subchap01Component implements  OnInit {
     });    
   }
 
-  public onSubmit(): void {
-    console.log('Something submitted...');
-    if (this.messageForm.valid) {
-      console.log(this.messageForm.value);
-    }    
-  }
-
   public localStore(key: string, value: string):void {
     if (this.activateLocalStorage) {
       localStorage.setItem(this.localStorageKey(key), value);
     }
   }
 
-  public deleteStroage():void {    
-    FORM_KEYS.forEach((value: string) => { 
-      localStorage.removeItem(this.localStorageKey(value));
-    });    
-  }
-  
   public validate(key: string): IValidator {
-
     let validator: IValidator = {};
-
     if (key==='username') {
       validator = { 
         isValid: this.messageForm.controls.username.valid && 
@@ -107,8 +93,7 @@ export class Review3Subchap01Component implements  OnInit {
   }
 
   public invalidate(key: string): IInvalidator {
-    let invalidator: IInvalidator = {};
-    
+    let invalidator: IInvalidator = {};    
     if (key==='username') {
       invalidator = { 
         isInvalid: this.messageForm.controls.username.invalid && 
@@ -130,8 +115,22 @@ export class Review3Subchap01Component implements  OnInit {
         message: 'Message is required and must have at least 12 characters...'
       }
     }
-
     return invalidator;
+  }
+
+  onReset() {    
+    FORM_KEYS.forEach((value: string) => { 
+      localStorage.removeItem(this.localStorageKey(value));
+    });  
+    this.messageForm.reset();
+  }
+
+  public onSubmit(): void {    
+    if (this.messageForm.valid) {
+      console.log('Something submitted...');
+      console.log(this.messageForm.value);
+      this.onReset();
+    }    
   }
 
 }

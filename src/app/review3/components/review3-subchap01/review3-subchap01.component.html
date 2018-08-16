@@ -96,6 +96,7 @@
     </div>
     <div class="col-md-10 form-check">
       <input 
+        #activateLocalStorageInput
         class="form-check-input" 
         type="checkbox"
         [checked]="activateLocalStorage"
@@ -121,8 +122,8 @@
       </div>
       <div class="col-md-10">
         <button 
-          type="reset"
-          (click)="deleteStroage()"
+          type="button"
+          (click)="onReset()"
           class="btn btn-danger">
           Reset
         </button>
@@ -146,8 +147,8 @@
       </div>
       <div class="row">
         <button 
-          type="reset" 
-          (click)="deleteStroage()"
+          type="button"
+          (click) ="onReset()"
           class="col-12 btn btn-danger">
           Reset
         </button>
