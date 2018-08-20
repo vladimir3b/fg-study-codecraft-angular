@@ -25,6 +25,24 @@ import { review2Routes } from './review2/review2.router';
 import { review3Routes } from './review3/review3.router';
 import { Chap01RootComponent } from './chap01/components/chap01-root/chap01-root.component';
 import { chap01Routes } from './chap01/chap01.router';
+import { Review4RootComponent } from './review4/components/review4-root/review4-root.component';
+import { Review5RootComponent } from './review5/components/review5-root/review5-root.component';
+import { StudyRootComponent } from './study/components/study-root/study-root.component';
+import { Chap10RootComponent } from './chap10/components/chap10-root/chap10-root.component';
+import { Chap11RootComponent } from './chap11/components/chap11-root/chap11-root.component';
+import { Chap12RootComponent } from './chap12/components/chap12-root/chap12-root.component';
+import { Chap13RootComponent } from './chap13/components/chap13-root/chap13-root.component';
+import { Chap14RootComponent } from './chap14/components/chap14-root/chap14-root.component';
+import { Chap15RootComponent } from './chap15/components/chap15-root/chap15-root.component';
+import { chap10Routes } from './chap10/chap10.router';
+import { chap11Routes } from './chap11/chap11.router';
+import { chap12Routes } from 'src/app/chap12/chap12.router';
+import { chap13Routes } from './chap13/chap13.router';
+import { chap14Routes } from './chap14/chap14.router';
+import { chap15Routes } from './chap15/chap15.router';
+import { review4Routes } from './review4/review4.router';
+import { review5Routes } from './review5/review5.router';
+import { studyRoutes } from './study/study.router';
 
 
 const rootRoutes: Routes = [
@@ -65,6 +83,30 @@ const rootRoutes: Routes = [
     component: Chap09RootComponent
   },
   {
+    path: 'chap10',
+    component: Chap10RootComponent
+  },
+  {
+    path: 'chap11',
+    component: Chap11RootComponent
+  },
+  {
+    path: 'chap12',
+    component: Chap12RootComponent
+  },
+  {
+    path: 'chap13',
+    component: Chap13RootComponent
+  },
+  {
+    path: 'chap14',
+    component: Chap14RootComponent
+  },
+  {
+    path: 'chap15',
+    component: Chap15RootComponent
+  },
+  {
     path: 'review1',
     component: Review1RootComponent
   },
@@ -75,6 +117,18 @@ const rootRoutes: Routes = [
   {
     path: 'review3',
     component: Review3RootComponent
+  },
+  {
+    path: 'review4',
+    component: Review4RootComponent
+  },
+  {
+    path: 'review5',
+    component: Review5RootComponent
+  },
+  {
+    path: 'study',
+    component: StudyRootComponent
   },
   {
     path: '**',
@@ -102,8 +156,18 @@ export const appRoutes: Routes = createRoutes(
   chap07Routes,
   chap08Routes,
   chap09Routes,
+  chap10Routes,
+  chap11Routes,
+  chap12Routes,
+  chap13Routes,
+  chap14Routes,
+  chap15Routes,
   review1Routes,
   review2Routes,
   review3Routes,
-  rootRoutes);
+  review4Routes,
+  review5Routes,
+  studyRoutes,
+  rootRoutes
+);
 

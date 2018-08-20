@@ -137,6 +137,31 @@ import { Review5Subchap04Component } from './review5/components/review5-subchap0
 import { Review5Subchap05Component } from './review5/components/review5-subchap05/review5-subchap05.component';
 import { Review5RootComponent } from './review5/components/review5-root/review5-root.component';
 import { StudyRootComponent } from './study/components/study-root/study-root.component';
+import { Study01Component } from './study/components/study01/study01.component';
+import { Study02Component } from './study/components/study02/study02.component';
+import { Study03Component } from './study/components/study03/study03.component';
+import { Study04Component } from './study/components/study04/study04.component';
+import { Study05Component } from './study/components/study05/study05.component';
+import { Study06Component } from './study/components/study06/study06.component';
+import { Study07Component } from './study/components/study07/study07.component';
+import { Study08Component } from './study/components/study08/study08.component';
+import { Study09Component } from './study/components/study09/study09.component';
+import { Study10Component } from './study/components/study10/study10.component';
+import { Study11Component } from './study/components/study11/study11.component';
+import { Study12Component } from './study/components/study12/study12.component';
+import { Study13Component } from './study/components/study13/study13.component';
+import { Study14Component } from './study/components/study14/study14.component';
+import { Study15Component } from './study/components/study15/study15.component';
+import { Study16Component } from './study/components/study16/study16.component';
+import { Study17Component } from './study/components/study17/study17.component';
+import { Study18Component } from './study/components/study18/study18.component';
+import { Study19Component } from './study/components/study19/study19.component';
+import { Study20Component } from './study/components/study20/study20.component';
+import { Study21Component } from './study/components/study21/study21.component';
+import { Study22Component } from './study/components/study22/study22.component';
+import { Study23Component } from './study/components/study23/study23.component';
+import { Study24Component } from './study/components/study24/study24.component';
+import { Study25Component } from './study/components/study25/study25.component';
 
 
 
@@ -273,8 +298,31 @@ import { StudyRootComponent } from './study/components/study-root/study-root.com
     Review5Subchap05Component,
     Review5RootComponent,
     StudyRootComponent,
-    
-      
+    Study01Component,
+    Study02Component,
+    Study03Component,
+    Study04Component,
+    Study05Component,
+    Study06Component,
+    Study07Component,
+    Study08Component,
+    Study09Component,
+    Study10Component,
+    Study11Component,
+    Study12Component,
+    Study13Component,
+    Study14Component,
+    Study15Component,
+    Study16Component,
+    Study17Component,
+    Study18Component,
+    Study19Component,
+    Study20Component,
+    Study21Component,
+    Study22Component,
+    Study23Component,
+    Study24Component,
+    Study25Component
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
