@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, interval } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 
-import { myMath } from '../../../others/libraries/typescript/math';
+import { myMath } from '../../../_others/libraries/typescript/math';
 
 @Component({
   selector: 'fg-app-chap08-subchap02',
@@ -44,8 +44,7 @@ export class Chap08Subchap02Component implements
           reject(error);
         }
         resolve(myMath.randomInteger(34, 75));
-      }, myMath.randomInteger(1500, 2500)
-     )
+      }, myMath.randomInteger(1500, 2500))
     });
   }
 

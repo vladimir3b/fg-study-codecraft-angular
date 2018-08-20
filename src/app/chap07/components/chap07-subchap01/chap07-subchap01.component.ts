@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, interval } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 
-import { myMath } from './../../../others/libraries/typescript/math';
+import { myMath } from './../../../_others/libraries/typescript/math';
 
 @Component({
   selector: 'fg-app-chap07-subchap01',

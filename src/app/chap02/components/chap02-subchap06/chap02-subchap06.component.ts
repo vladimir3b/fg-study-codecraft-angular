@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { myMath } from '../../../others/libraries/typescript/math';
+import { myMath } from '../../../_others/libraries/typescript/math';
 
 @Component({
   selector: 'fg-app-chap02-subchap06',

@@ -7,9 +7,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { RootComponent } from './root.component';
-import { PageNotFoundComponent } from './others/components/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './_others/components/page-not-found/page-not-found.component';
 import { appRoutes } from './app.routes';
-import { HomePageComponent } from './others/components/home-page/home-page.component';
+import { HomePageComponent } from './_others/components/home-page/home-page.component';
 // --------------------------------
 import { Chap02RootComponent } from './chap02/components/chap02-root/chap02-root.component';
 import { Chap04RootComponent } from './chap04/components/chap04-root/chap04-root.component';
@@ -80,6 +80,63 @@ import { Chap01Subchap01Component } from './chap01/components/chap01-subchap01/c
 import { Chap01RootComponent } from './chap01/components/chap01-root/chap01-root.component';
 import {  Review2DeleteElementDirective } from './review2/directives/review2-delete-element.directive';
 import { DefaultPipe } from './chap08/pipes/default.pipe';
+import { Chap10RootComponent } from './chap10/components/chap10-root/chap10-root.component';
+import { Chap10Subchap01Component } from './chap10/components/chap10-subchap01/chap10-subchap01.component';
+import { Chap10Subchap02Component } from './chap10/components/chap10-subchap02/chap10-subchap02.component';
+import { Chap10Subchap03Component } from './chap10/components/chap10-subchap03/chap10-subchap03.component';
+import { Chap10Subchap04Component } from './chap10/components/chap10-subchap04/chap10-subchap04.component';
+import { Chap10Subchap05Component } from './chap10/components/chap10-subchap05/chap10-subchap05.component';
+import { Chap11Subchap01Component } from './chap11/components/chap11-subchap01/chap11-subchap01.component';
+import { Chap11Subchap02Component } from './chap11/components/chap11-subchap02/chap11-subchap02.component';
+import { Chap11Subchap03Component } from './chap11/components/chap11-subchap03/chap11-subchap03.component';
+import { Chap11Subchap04Component } from './chap11/components/chap11-subchap04/chap11-subchap04.component';
+import { Chap11RootComponent } from './chap11/components/chap11-root/chap11-root.component';
+import { Chap12RootComponent } from './chap12/components/chap12-root/chap12-root.component';
+import { Chap13RootComponent } from './chap13/components/chap13-root/chap13-root.component';
+import { Chap12Subchap01Component } from './chap12/components/chap12-subchap01/chap12-subchap01.component';
+import { Chap12Subchap02Component } from './chap12/components/chap12-subchap02/chap12-subchap02.component';
+import { Chap12Subchap03Component } from './chap12/components/chap12-subchap03/chap12-subchap03.component';
+import { Chap12Subchap04Component } from './chap12/components/chap12-subchap04/chap12-subchap04.component';
+import { Chap12Subchap05Component } from './chap12/components/chap12-subchap05/chap12-subchap05.component';
+import { Chap12Subchap06Component } from './chap12/components/chap12-subchap06/chap12-subchap06.component';
+import { Chap13Subchap06Component } from './chap13/components/chap13-subchap06/chap13-subchap06.component';
+import { Chap13Subchap07Component } from './chap13/components/chap13-subchap07/chap13-subchap07.component';
+import { Chap13Subchap08Component } from './chap13/components/chap13-subchap08/chap13-subchap08.component';
+import { Chap13Subchap09Component } from './chap13/components/chap13-subchap09/chap13-subchap09.component';
+import { Chap13Subchap10Component } from './chap13/components/chap13-subchap10/chap13-subchap10.component';
+import { Chap13Subchap11Component } from './chap13/components/chap13-subchap11/chap13-subchap11.component';
+import { Chap13Subchap12Component } from './chap13/components/chap13-subchap12/chap13-subchap12.component';
+import { Chap13Subchap13Component } from './chap13/components/chap13-subchap13/chap13-subchap13.component';
+import { Chap13Subchap05Component } from './chap13/components/chap13-subchap05/chap13-subchap05.component';
+import { Chap13Subchap04Component } from './chap13/components/chap13-subchap04/chap13-subchap04.component';
+import { Chap13Subchap03Component } from './chap13/components/chap13-subchap03/chap13-subchap03.component';
+import { Chap13Subchap02Component } from './chap13/components/chap13-subchap02/chap13-subchap02.component';
+import { Chap13Subchap01Component } from './chap13/components/chap13-subchap01/chap13-subchap01.component';
+import { Chap14RootComponent } from './chap14/components/chap14-root/chap14-root.component';
+import { Chap14Subchap01Component } from './chap14/components/chap14-subchap01/chap14-subchap01.component';
+import { Chap14Subchap02Component } from './chap14/components/chap14-subchap02/chap14-subchap02.component';
+import { Chap15Subchap01Component } from './chap15/components/chap15-subchap01/chap15-subchap01.component';
+import { Chap15Subchap02Component } from './chap15/components/chap15-subchap02/chap15-subchap02.component';
+import { Chap15Subchap03Component } from './chap15/components/chap15-subchap03/chap15-subchap03.component';
+import { Chap15Subchap04Component } from './chap15/components/chap15-subchap04/chap15-subchap04.component';
+import { Chap15Subchap05Component } from './chap15/components/chap15-subchap05/chap15-subchap05.component';
+import { Chap15Subchap06Component } from './chap15/components/chap15-subchap06/chap15-subchap06.component';
+import { Chap15Subchap07Component } from './chap15/components/chap15-subchap07/chap15-subchap07.component';
+import { Chap15Subchap08Component } from './chap15/components/chap15-subchap08/chap15-subchap08.component';
+import { Chap15RootComponent } from './chap15/components/chap15-root/chap15-root.component';
+import { Review4RootComponent } from './review4/components/review4-root/review4-root.component';
+import { Review4Subchap01Component } from './review4/components/review4-subchap01/review4-subchap01.component';
+import { Review4Subchap02Component } from './review4/components/review4-subchap02/review4-subchap02.component';
+import { Review4Subchap03Component } from './review4/components/review4-subchap03/review4-subchap03.component';
+import { Review4Subchap04Component } from './review4/components/review4-subchap04/review4-subchap04.component';
+import { Review4Subchap05Component } from './review4/components/review4-subchap05/review4-subchap05.component';
+import { Review5Subchap01Component } from './review5/components/review5-subchap01/review5-subchap01.component';
+import { Review5Subchap02Component } from './review5/components/review5-subchap02/review5-subchap02.component';
+import { Review5Subchap03Component } from './review5/components/review5-subchap03/review5-subchap03.component';
+import { Review5Subchap04Component } from './review5/components/review5-subchap04/review5-subchap04.component';
+import { Review5Subchap05Component } from './review5/components/review5-subchap05/review5-subchap05.component';
+import { Review5RootComponent } from './review5/components/review5-root/review5-root.component';
+import { StudyRootComponent } from './study/components/study-root/study-root.component';
 
 
 
@@ -158,7 +215,65 @@ import { DefaultPipe } from './chap08/pipes/default.pipe';
     Chap01Subchap01Component,
     Chap01RootComponent,
     Review2DeleteElementDirective,
-    DefaultPipe 
+    DefaultPipe,
+    Chap10RootComponent,
+    Chap10Subchap01Component,
+    Chap10Subchap02Component,
+    Chap10Subchap03Component,
+    Chap10Subchap04Component,
+    Chap10Subchap05Component,
+    Chap11Subchap01Component,
+    Chap11Subchap02Component,
+    Chap11Subchap03Component,
+    Chap11Subchap04Component,
+    Chap11RootComponent,
+    Chap12RootComponent,
+    Chap13RootComponent,
+    Chap12Subchap01Component,
+    Chap12Subchap02Component,
+    Chap12Subchap03Component,
+    Chap12Subchap04Component,
+    Chap12Subchap05Component,
+    Chap12Subchap06Component,
+    Chap13Subchap06Component,
+    Chap13Subchap07Component,
+    Chap13Subchap08Component,
+    Chap13Subchap09Component,
+    Chap13Subchap10Component,
+    Chap13Subchap11Component,
+    Chap13Subchap12Component,
+    Chap13Subchap13Component,
+    Chap13Subchap05Component,
+    Chap13Subchap04Component,
+    Chap13Subchap03Component,
+    Chap13Subchap02Component,
+    Chap13Subchap01Component,
+    Chap14RootComponent,
+    Chap14Subchap01Component,
+    Chap14Subchap02Component,
+    Chap15Subchap01Component,
+    Chap15Subchap02Component,
+    Chap15Subchap03Component,
+    Chap15Subchap04Component,
+    Chap15Subchap05Component,
+    Chap15Subchap06Component,
+    Chap15Subchap07Component,
+    Chap15Subchap08Component,
+    Chap15RootComponent,
+    Review4RootComponent,
+    Review4Subchap01Component,
+    Review4Subchap02Component,
+    Review4Subchap03Component,
+    Review4Subchap04Component,
+    Review4Subchap05Component,
+    Review5Subchap01Component,
+    Review5Subchap02Component,
+    Review5Subchap03Component,
+    Review5Subchap04Component,
+    Review5Subchap05Component,
+    Review5RootComponent,
+    StudyRootComponent,
+    
       
   ],
   imports: [
