@@ -18,7 +18,7 @@ export class Chap10Subchap01Component implements OnInit {
 
     interface IDatabaseCommunication {
       readData: (tableName: string) => Array<string>;
-      writeData: (tableName: string, data: string) => boolean;
+      writeData: <T>(tableName: string, data: T) => boolean;
       deleteData: (tableName: string, key: string) => boolean;
     }
 
@@ -27,11 +27,11 @@ export class Chap10Subchap01Component implements OnInit {
       constructor(private _authenticationCode: string) {}
 
       public readData = (tableName: string) => ['word 1', 'word2', 'word3'];
-      public writeData = (tableName: string, data: string) => (myMath.randomInteger(100, 1500)%2) ? true : false;
+      public writeData = <T>(tableName: string, data: T) => (myMath.randomInteger(100, 1500)%2) ? true : false;
       public deleteData = (tableName: string, key: string) => (myMath.randomInteger(100, 1500)%2) ? true : false;
       public numberOfRecords = (tableName: string): number => myMath.randomInteger(100, 1500);
 
-      public autenticationCode = () => this._authenticationCode;
+      public authenticationCode = () => this._authenticationCode;
     }
     
     class DBMagSys1 extends DbManagementSystem {
@@ -43,7 +43,20 @@ export class Chap10Subchap01Component implements OnInit {
     }
 
     class DBService1 {
-      public databaseServiceUsed
+      public databaseServiceUsed: IDatabaseCommunication;      
+
+      constructor(public tableName: string) {
+        this.databaseServiceUsed = new DBMagSys1('CWW345354SDFGS');// this is hardcoded
+      }
+
+      public writeData(data: Array<string>) {
+        if (this.databaseServiceUsed.writeData(this.tableName,data)) {
+          console.log('Data was saved to the database');
+        } else {
+          console.error('Couldn\'t save data to the database');
+        }
+      }
+      
     }
 
   }
