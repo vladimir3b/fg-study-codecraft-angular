@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ReflectiveInjector } from '@angular/core';
 import { myMath } from '../../../_others/libraries/typescript/math';
 
 
@@ -13,6 +13,7 @@ export class Chap10Subchap01Component implements OnInit {
 
   ngOnInit() {
     this.overviewDependencyInjection();
+    this.injectors();
   }
 
   public overviewDependencyInjection() {
@@ -91,7 +92,37 @@ export class Chap10Subchap01Component implements OnInit {
 
   public injectors() {
 
+    class EmailService {};
+
+    class InstantMessagingService {
+      public providerName: string;
+      public chatChannels: Array<string>
+      // constructor(public providerName: string, public chatChannels: Array<string>) {}
+    };
     
+    let injector1: ReflectiveInjector = ReflectiveInjector.resolveAndCreate([
+      EmailService,
+      InstantMessagingService
+    ]);
+
+
+    let communicationService1: InstantMessagingService = injector1.get(InstantMessagingService);
+    let communicationService2: InstantMessagingService = injector1.get(InstantMessagingService);
+    console.log(communicationService1);
+    console.log(communicationService1 === communicationService2); // communicationService1 and 2 are the same instance of InstantMessagingService
+
+    let injector2: ReflectiveInjector = ReflectiveInjector.resolveAndCreate([EmailService]);
+    let childInjector1: ReflectiveInjector = injector2.resolveAndCreateChild([EmailService]);
+    let childInjector2: ReflectiveInjector = injector2.resolveAndCreateChild([]); //a child injector forwards the request to its parents if it cannot resolve a token
+
+    let communicationService3: EmailService = injector2.get(EmailService);
+    let communicationService4: EmailService = childInjector1.get(EmailService);
+    let communicationService5: EmailService = childInjector2.get(EmailService);
+    console.log(communicationService3);
+    console.log(communicationService4);
+    console.log(communicationService5);
+    console.log(communicationService3 === communicationService4);
+    console.log(communicationService3 === communicationService5);
 
   }
 
