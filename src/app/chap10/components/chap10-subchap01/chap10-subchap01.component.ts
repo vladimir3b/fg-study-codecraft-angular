@@ -85,8 +85,14 @@ export class Chap10Subchap01Component implements OnInit {
     let database3: DBService2 = new DBService2('candidates', new DBMagSys2('DRAGNEEA23424'));
     database2.writeData(['a', 'b', 'b']);
     database3.writeData(['1', '2', '3']);
-    console.log((<DbManagementSystem>database2.databaseServiceUsed).authenticationCode());
+    console.log((<DbManagementSystem>database2.databaseServiceUsed).authenticationCode()); // this is dependency injection
     console.log((<DbManagementSystem>database3.databaseServiceUsed).authenticationCode());
+  }
+
+  public injectors() {
+
+    
+
   }
 
 }
