@@ -12,9 +12,10 @@ export class Chap10Subchap01Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.overviewDependencyInjection();
   }
 
-  public simulateDependencyInjection() {
+  public overviewDependencyInjection() {
 
     interface IDatabaseCommunication {
       readData: (tableName: string) => Array<string>;
@@ -45,12 +46,12 @@ export class Chap10Subchap01Component implements OnInit {
     class DBService1 {
       public databaseServiceUsed: IDatabaseCommunication;      
 
-      constructor(public tableName: string) {
-        this.databaseServiceUsed = new DBMagSys1('CWW345354SDFGS');// this is hardcoded
+      constructor(public tableName: string, public authenticationCode: string) {
+        this.databaseServiceUsed = new DBMagSys1(authenticationCode);// this is hard-coded
       }
 
       public writeData(data: Array<string>) {
-        if (this.databaseServiceUsed.writeData(this.tableName,data)) {
+        if (this.databaseServiceUsed.writeData(this.tableName, data)) {
           console.log('Data was saved to the database');
         } else {
           console.error('Couldn\'t save data to the database');
@@ -59,6 +60,33 @@ export class Chap10Subchap01Component implements OnInit {
       
     }
 
+    class DBService2 {
+      public databaseServiceUsed: IDatabaseCommunication;      
+
+      constructor(public tableName: string, public DBMagSys: IDatabaseCommunication) {
+        this.databaseServiceUsed = DBMagSys;
+      }
+
+      public writeData(data: Array<string>) {
+        if (this.databaseServiceUsed.writeData(this.tableName, data)) {
+          console.log('Data was saved to the database');
+        } else {
+          console.error('Couldn\'t save data to the database');
+        }
+      }
+      
+    }
+
+    let database1: DBService1 = new DBService1('persons', 'SDF3463DSE');
+    database1.writeData(['something1', 'something2']);
+    console.log(database1.authenticationCode === (<DbManagementSystem>database1.databaseServiceUsed).authenticationCode());
+
+    let database2: DBService2 = new DBService2('candidates', new DBMagSys1('ADEWER23WE'));
+    let database3: DBService2 = new DBService2('candidates', new DBMagSys2('DRAGNEEA23424'));
+    database2.writeData(['a', 'b', 'b']);
+    database3.writeData(['1', '2', '3']);
+    console.log((<DbManagementSystem>database2.databaseServiceUsed).authenticationCode());
+    console.log((<DbManagementSystem>database3.databaseServiceUsed).authenticationCode());
   }
 
 }
