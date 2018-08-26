@@ -162,6 +162,8 @@ import { Study22Component } from './study/components/study22/study22.component';
 import { Study23Component } from './study/components/study23/study23.component';
 import { Study24Component } from './study/components/study24/study24.component';
 import { Study25Component } from './study/components/study25/study25.component';
+import { MyService } from './chap10/services/myService.service';
+import { LogService } from './chap10/services/logService.service';
 
 
 
@@ -330,7 +332,16 @@ import { Study25Component } from './study/components/study25/study25.component';
     ReactiveFormsModule,
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'criminal',
+      useValue:  {
+        firstName: 'Liviu',
+        lastName: 'Dragnea',
+        title: 'criminal'
+      }
+    }
+  ],
   bootstrap: [RootComponent]
 })
 export class AppModule { }
