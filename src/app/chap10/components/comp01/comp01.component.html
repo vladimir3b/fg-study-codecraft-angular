@@ -1,0 +1,43 @@
+<div class="alert alert-warning">
+  <h5>Parent Component</h5>
+  <p>
+    <label for="message1">Message 1</label>
+    <input 
+      id="message1"
+      type="text"
+      class="form-control"
+      [(ngModel)]="myService1.message">
+  </p>
+  <p>
+    <label for="message2">Message 2</label>
+    <input 
+      id="message2"
+      type="text"
+      class="form-control"
+      [(ngModel)]="myService2.message">
+  </p>
+  <p>
+    <label for="message3">Message 3</label>
+    <input 
+      id="message3"
+      type="text"
+      class="form-control"
+      [(ngModel)]="myService3.message">
+  </p>
+  <ng-content></ng-content>  
+  <ul class="list-group">
+    <li class="list-group-item">
+      <strong>Message 1:</strong>
+      {{ myService1.message }}
+    </li>
+    <li class="list-group-item">
+      <strong>Message 2:</strong>
+      {{ myService2.message }}
+    </li>
+    <li class="list-group-item">
+      <strong>Message 3:</strong>
+      {{ myService3.message }}
+    </li>
+  </ul>
+
+</div>

@@ -9,7 +9,7 @@ export class Chap10Subchap05Component implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
+
 
 }

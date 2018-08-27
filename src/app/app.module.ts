@@ -1,3 +1,6 @@
+import { MyService3 } from './chap10/services/myService3.service';
+import { MyService2 } from './chap10/services/myService2.service';
+import { MyService1 } from './chap10/services/myService1.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -164,6 +167,8 @@ import { Study24Component } from './study/components/study24/study24.component';
 import { Study25Component } from './study/components/study25/study25.component';
 import { MyService } from './chap10/services/myService.service';
 import { LogService } from './chap10/services/logService.service';
+import { Comp01Component } from './chap10/components/comp01/comp01.component';
+import { Comp02Component } from './chap10/components/comp02/comp02.component';
 
 
 
@@ -324,7 +329,9 @@ import { LogService } from './chap10/services/logService.service';
     Study22Component,
     Study23Component,
     Study24Component,
-    Study25Component
+    Study25Component,
+    Comp01Component,
+    Comp02Component
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -340,7 +347,10 @@ import { LogService } from './chap10/services/logService.service';
         lastName: 'Dragnea',
         title: 'criminal'
       }
-    }
+    },
+    MyService1,
+    MyService2,
+    MyService3
   ],
   bootstrap: [RootComponent]
 })
