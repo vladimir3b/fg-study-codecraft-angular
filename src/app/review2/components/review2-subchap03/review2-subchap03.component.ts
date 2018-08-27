@@ -11,15 +11,11 @@ export class Review2Subchap03Component implements OnInit {
   public numberOfRows: number;
   public numberOfCols: number;
 
-  constructor(private cdRef:ChangeDetectorRef) {
+  constructor() {
     this.numberOfRows = this.randomNumber(4, 6);
     this.numberOfCols = this.randomNumber(2, 4);
-   }
-  
-   ngAfterViewChecked(){
-    console.log( "! changement de la date du composant !" );
-    this.cdRef.detectChanges();
-  }
+   }  
+ 
   ngOnInit() { }
 
   public randomNumber(min: number, max: number): number {
