@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { myMath } from './../../../_others/libraries/typescript/math';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'fg-app-review2-subchap03',
@@ -7,9 +8,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Review2Subchap03Component implements OnInit {
 
-  constructor() { }
+  public numberOfRows: number;
+  public numberOfCols: number;
 
-  ngOnInit() {
+  constructor(private cdRef:ChangeDetectorRef) {
+    this.numberOfRows = this.randomNumber(4, 6);
+    this.numberOfCols = this.randomNumber(2, 4);
+   }
+  
+   ngAfterViewChecked(){
+    console.log( "! changement de la date du composant !" );
+    this.cdRef.detectChanges();
+  }
+  ngOnInit() { }
+
+  public randomNumber(min: number, max: number): number {
+    return myMath.randomInteger(min, max);
+  }
+
+  public randomColorClass(): string {
+    let colorClasses: Array<string> = [
+      'bg-primary', 
+      'bg-secondary', 
+      'bg-success',
+      'bg-danger',
+      'bg-warning',
+      'bg-info',
+      'bg-light',
+      'bg-dark'
+    ];
+    return colorClasses[this.randomNumber(0, colorClasses.length) -1];
   }
 
 }

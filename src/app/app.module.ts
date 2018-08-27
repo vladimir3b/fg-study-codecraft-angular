@@ -169,6 +169,8 @@ import { MyService } from './chap10/services/myService.service';
 import { LogService } from './chap10/services/logService.service';
 import { Comp01Component } from './chap10/components/comp01/comp01.component';
 import { Comp02Component } from './chap10/components/comp02/comp02.component';
+import { ShowValueDirective } from './review2/directives/show-value.directive';
+import { RepeatElementDirective } from './review2/directives/repeat-element.directive';
 
 
 
@@ -331,7 +333,9 @@ import { Comp02Component } from './chap10/components/comp02/comp02.component';
     Study24Component,
     Study25Component,
     Comp01Component,
-    Comp02Component
+    Comp02Component,
+    ShowValueDirective,
+    RepeatElementDirective
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

@@ -1,4 +1,28 @@
 <button class="btn btn-link" style="padding-left: 0" routerLink="/review2">
   <h4>Review 2 - Componets and Directives</h4>
 </button>
-<h5>03 - </h5>
+<h5>03 - Custom Structural Directive</h5>
+<hr>
+<a href="https://www.udemy.com/the-complete-guide-to-angular-2/learn/v4/t/lecture/6656186?start=0" target="blank">
+  click for tutorial
+</a><hr>
+
+<!-- <div 
+  class="alert alert-info"
+  *fgAppRepeatElement="5">
+  Must repeat this many times...
+</div> -->
+
+<div class="container">
+  <div 
+    class="row text-center" 
+    *fgAppRepeatElement="numberOfRows">
+    <div 
+      class="col"
+      [ngClass]="randomColorClass()"
+      *fgAppRepeatElement="randomNumber(2, 6)">
+      <!-- ERROR!!! Expression has changed after it was checked -->
+      mama are mere
+    </div>
+  </div>
+</div>
