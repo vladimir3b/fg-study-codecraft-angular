@@ -5,5 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class Review4Message3Service {
 
+  public message: string = '';
+
   constructor() { }
 }

@@ -175,6 +175,9 @@ import { Review4ParentService } from './review4/services/review4-parent.service'
 import { REVIEW4_PARENT_SERVICE_TOKEN } from './_others/tokens';
 import { Review4ChildComponent } from './review4/components/review4-child/review4-child.component';
 import { Review4ParentComponent } from './review4/components/review4-parent/review4-parent.component';
+import { Review4Message1Service } from './review4/services/review4-message1.service';
+import { Review4Message2Service } from './review4/services/review4-message2.service';
+import { Review4Message3Service } from './review4/services/review4-message3.service';
 
 @NgModule({
   declarations: [
@@ -361,8 +364,10 @@ import { Review4ParentComponent } from './review4/components/review4-parent/revi
     {
       provide: REVIEW4_PARENT_SERVICE_TOKEN,
       useClass: Review4ParentService
-    }
-    
+    },
+    Review4Message1Service,
+    Review4Message2Service,
+    Review4Message3Service,
   ],
   bootstrap: [RootComponent]
 })

@@ -4,6 +4,7 @@
     <label for="message1">Message 1</label>
     <input 
       id="message1"
+      [(ngModel)]="_service1.message"
       type="text"
       class="form-control">
   </p>
@@ -11,6 +12,7 @@
     <label for="message2">Message 2</label>
     <input 
       id="message2"
+      [(ngModel)]="_service2.message"
       type="text"
       class="form-control">
   </p>
@@ -18,8 +20,22 @@
     <label for="message1">Message 3</label>
     <input 
       id="message3"
+      [(ngModel)]="_service3.message"
       type="text"
       class="form-control">
+  </p>
+  <hr>
+  <p>
+    <strong>Message 1:</strong> 
+    {{_service1.message}}
+  </p>
+  <p>
+    <strong>Message 2:</strong>
+    {{_service2.message}}
+  </p>
+  <p>
+    <strong>Message 3:</strong>
+    {{_service3.message}}
   </p>
   <hr>
   <div class="alert alert-info">
