@@ -3,7 +3,7 @@ import { MyService2 } from './chap10/services/myService2.service';
 import { MyService1 } from './chap10/services/myService1.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -171,9 +171,10 @@ import { Comp01Component } from './chap10/components/comp01/comp01.component';
 import { Comp02Component } from './chap10/components/comp02/comp02.component';
 import { ShowValueDirective } from './review2/directives/show-value.directive';
 import { RepeatElementDirective } from './review2/directives/repeat-element.directive';
-
-
-
+import { Review4ParentService } from './review4/services/review4-parent.service';
+import { REVIEW4_PARENT_SERVICE_TOKEN } from './_others/tokens';
+import { Review4ChildComponent } from './review4/components/review4-child/review4-child.component';
+import { Review4ParentComponent } from './review4/components/review4-parent/review4-parent.component';
 
 @NgModule({
   declarations: [
@@ -335,7 +336,9 @@ import { RepeatElementDirective } from './review2/directives/repeat-element.dire
     Comp01Component,
     Comp02Component,
     ShowValueDirective,
-    RepeatElementDirective
+    RepeatElementDirective,
+    Review4ChildComponent,
+    Review4ParentComponent   
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -354,8 +357,13 @@ import { RepeatElementDirective } from './review2/directives/repeat-element.dire
     },
     MyService1,
     MyService2,
-    MyService3
+    MyService3,
+    {
+      provide: REVIEW4_PARENT_SERVICE_TOKEN,
+      useClass: Review4ParentService
+    }
+    
   ],
   bootstrap: [RootComponent]
 })
-export class AppModule { }
+export class AppModule {}
