@@ -1,8 +1,48 @@
 <button class="btn btn-link" style="padding-left: 0" routerLink="/chap11">
   <h4>Chapter 11 - HTTP</h4>
 </button>
-<h5>01 - ... </h5>
-<a href="#" target="blank">
+<h5>01 - Core HTTP API </h5>
+<a href="https://codecraft.tv/courses/angular/http/core-http-api/" target="blank">
+  click for tutorial
+</a> or 
+<a href="https://blog.angularindepth.com/the-new-angular-httpclient-api-9e5c85fe3361" target="blank">
   click for tutorial
 </a>
 <hr>
+<div class="row">
+  <div class="col text-center">
+    <button class="btn btn-primary" (click)="doGET()">GET</button>
+    <br>&nbsp;
+  </div>
+  <div class="col text-center">
+    <button class="btn btn-primary" (click)="doPOST()">POST</button>
+  </div>
+  <div class="col text-center">
+    <button class="btn btn-primary" (click)="doPUT()">PUT</button>
+  </div>
+  <div class="col text-center">
+    <button class="btn btn-primary" (click)="doDELETE()">DELETE</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col text-center">
+    <button class="btn btn-secondary" (click)="doGETAsPromise()">As Promise</button>
+    <br>&nbsp;
+  </div>
+  <div class="col text-center">
+    <button class="btn btn-secondary" (click)="doGETAsPromiseError()">Error As Promise</button>
+  </div>
+  <div class="col text-center">
+    <button class="btn btn-secondary" (click)="doGETAsObservableError()">Error As Observable</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col text-center">
+    <button class="btn btn-danger" (click)="doGETWithHeaders()">With Headers</button>
+    <br>&nbsp;
+  </div>
+</div>
+<hr>
+<div class="alert alert-info">
+  view the console...
+</div>

@@ -7,6 +7,7 @@ import { NgModule, InjectionToken } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { RootComponent } from './root.component';
@@ -347,7 +348,8 @@ import { Review4Message3Service } from './review4/services/review4-message3.serv
     RouterModule.forRoot(appRoutes),
     FormsModule,
     ReactiveFormsModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
     {
