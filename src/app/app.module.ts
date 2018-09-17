@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 
 import { RootComponent } from './root.component';
@@ -349,7 +350,8 @@ import { Review4Message3Service } from './review4/services/review4-message3.serv
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpModule
   ],
   providers: [
     {
