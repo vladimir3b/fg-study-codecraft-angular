@@ -12,6 +12,7 @@
       type="text" 
       class="form-control" 
       id="searchTerm" 
+      (focus)="buttonNotClicked()"
       [(ngModel)]="searchTerm"
       placeholder="Search a song or an artist...">
   </div>
@@ -32,25 +33,20 @@
   </div>
 </div>
 
-<!-- <ul class="list-group">
-  <li 
-    class="list-group-item"
-    *ngFor="let track of _itunesSearch.results">
-    <img src="{{track.thumbnail}}">
-    <a 
-      target="_blank"
-      href="{{track.link}}">
-      {{ track.name }}
-    </a>
-  </li>
-</ul> -->
+<div 
+  *ngIf="noResults()"
+  class="row">
+  <div class="col alert alert-danger">
+    There aren't any items for {{ searchTerm }}!
+  </div>
+</div>
 
-<ul class="list-group">
-  <li class="list-group-item"
-      *ngFor="let track of _itunesSearch.searchResults">
-    <img src="{{track.artworkUrl30}}">&nbsp;
-    <a target="_blank"
-       href="{{track.trackViewUrl}}">{{ track.trackName }}
-    </a>
-  </li>
-</ul>
+<div class="list-group">
+  <a 
+    target="_blank"
+    href="{{item.link}}"
+    *ngFor="let item of _itunesSearch.searchResults"
+    class="list-group-item list-group-item-action list-group-item-light">
+    <img src="{{ item.thumbnail }}">&nbsp;&nbsp;{{ item.name }}
+  </a>    
+</div>

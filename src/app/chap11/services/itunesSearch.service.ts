@@ -19,34 +19,30 @@ const apiRoot: string = 'https://itunes.apple.com/search';
 export class ItunesSearchService {
   
   public searchResults: Array<ISearchItem>;
-  public loadingResults: boolean;
+  public havingResults: boolean;
   private _searchTerm: string;
 
   constructor (private _http: Http) {
     this.searchResults = [];
-    this.loadingResults = false;
+    this.havingResults = false;
   }
 
-  public search(searchTerm: string): any {
+  public search(searchTerm: string): Promise<void> {
     this._searchTerm = searchTerm;
     return new Promise((resolve, reject) => {
       this._http.get(`${apiRoot}?term=${this._searchTerm}&media=music&limit=20`)
-        // .pipe(
-        //   map((response: any) => {
-        //     return response.results.map((item: any) => {
-        //       return {
-        //         name: item.trackName,
-        //         artist: item.artistName,
-        //         link: item.trackViewUrl,
-        //         thumbnail: item.artworkUrl30,
-        //         artistId: item.artistId
-        //       };
-        //     })
-        //   }))
       .toPromise()
-      .then((response) => {
-        console.log(response.json());
-        this.searchResults = response.json().results;
+      .then((response: Response) => {
+        this.havingResults = response.json().results.length >= 1;
+        this.searchResults = response.json().results.map(item => { 
+          return {
+            name: item.trackName,
+            artist: item.artistName,
+            link: item.trackViewUrl,
+            thumbnail: item.artworkUrl30,
+            artistId: item.artistId
+          }
+        });        
         resolve();
       })
       .catch(() => reject());
