@@ -1,3 +1,4 @@
+import { ItunesSearchService } from './chap11/services/itunesSearch.service';
 import { MyService3 } from './chap10/services/myService3.service';
 import { MyService2 } from './chap10/services/myService2.service';
 import { MyService1 } from './chap10/services/myService1.service';
@@ -372,6 +373,7 @@ import { Review4Message3Service } from './review4/services/review4-message3.serv
     Review4Message1Service,
     Review4Message2Service,
     Review4Message3Service,
+    ItunesSearchService
   ],
   bootstrap: [RootComponent]
 })

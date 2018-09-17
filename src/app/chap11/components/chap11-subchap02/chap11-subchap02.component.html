@@ -1,8 +1,56 @@
 <button class="btn btn-link" style="padding-left: 0" routerLink="/chap11">
   <h4>Chapter 11 - HTTP</h4>
 </button>
-<h5>02 - ... </h5>
-<a href="#" target="blank">
+<h5>02 - HTTP Example with Promises</h5>
+<a href="https://codecraft.tv/courses/angular/http/http-with-promises/" target="blank">
   click for tutorial
 </a>
 <hr>
+<div class="form-group row">
+  <div class="col-sm-5">
+    <input 
+      type="text" 
+      class="form-control" 
+      id="searchTerm" 
+      [(ngModel)]="searchTerm"
+      placeholder="Search a song or an artist...">
+  </div>
+  <div for="searchTerm" class="col-sm-2">
+    <button 
+      class="btn btn-info"
+      (click)="doSearch()">
+      Search
+    </button>
+  </div>
+</div>
+<br>
+<div 
+  *ngIf="searching"
+  class="row">
+  <div class="col alert alert-info">
+    Searching for {{ searchTerm }}...
+  </div>
+</div>
+
+<!-- <ul class="list-group">
+  <li 
+    class="list-group-item"
+    *ngFor="let track of _itunesSearch.results">
+    <img src="{{track.thumbnail}}">
+    <a 
+      target="_blank"
+      href="{{track.link}}">
+      {{ track.name }}
+    </a>
+  </li>
+</ul> -->
+
+<ul class="list-group">
+  <li class="list-group-item"
+      *ngFor="let track of _itunesSearch.searchResults">
+    <img src="{{track.artworkUrl30}}">&nbsp;
+    <a target="_blank"
+       href="{{track.trackViewUrl}}">{{ track.trackName }}
+    </a>
+  </li>
+</ul>
