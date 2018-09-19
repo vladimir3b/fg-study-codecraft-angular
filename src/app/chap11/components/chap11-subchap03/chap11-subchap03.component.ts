@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { ItunesSearchObservableService, ISearchItem } from '../../services/itunesSearchObservable.service';
+
 
 @Component({
   selector: 'fg-app-chap11-subchap03',
@@ -12,7 +14,7 @@ export class Chap11Subchap03Component implements OnInit {
   public searchTerm: string;
   public searching: boolean;
   public buttonClicked: boolean;
-  private _searchResults: Array<ISearchItem>;
+  private _searchResults: Observable<Array<ISearchItem>>;
 
   constructor(private _itunesSearch: ItunesSearchObservableService) {
     this.searching = false;
@@ -26,13 +28,7 @@ export class Chap11Subchap03Component implements OnInit {
     if (this.searchTerm) {
       this.buttonClicked = true;
       this.searching = true;
-      this._itunesSearch.search(this.searchTerm)
-        .subscribe( (data) => {
-          this.searching = false;
-          this._searchResults = data;
-        })
-        // .then(() => this.searching = false)
-        // .catch((error) => console.error(error));
+      this._searchResults = this._itunesSearch.search(this.searchTerm)
     }
   }
   

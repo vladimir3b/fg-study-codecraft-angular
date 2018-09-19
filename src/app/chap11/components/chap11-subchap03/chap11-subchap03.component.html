@@ -45,7 +45,7 @@
   <a 
     target="_blank"
     href="{{item.link}}"
-    *ngFor="let item of _searchResults"
+    *ngFor="let item of _searchResults | async"
     class="list-group-item list-group-item-action list-group-item-light">
     <img src="{{ item.thumbnail }}">&nbsp;&nbsp;{{ item.name }}
   </a>    
