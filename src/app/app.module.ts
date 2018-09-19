@@ -181,6 +181,7 @@ import { Review4ParentComponent } from './review4/components/review4-parent/revi
 import { Review4Message1Service } from './review4/services/review4-message1.service';
 import { Review4Message2Service } from './review4/services/review4-message2.service';
 import { Review4Message3Service } from './review4/services/review4-message3.service';
+import { ItunesSearchObservableService } from './chap11/services/itunesSearchObservable.service';
 
 @NgModule({
   declarations: [
@@ -373,7 +374,8 @@ import { Review4Message3Service } from './review4/services/review4-message3.serv
     Review4Message1Service,
     Review4Message2Service,
     Review4Message3Service,
-    ItunesSearchService
+    ItunesSearchService,
+    ItunesSearchObservableService
   ],
   bootstrap: [RootComponent]
 })

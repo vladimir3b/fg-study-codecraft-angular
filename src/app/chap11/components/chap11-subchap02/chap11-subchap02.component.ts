@@ -31,7 +31,6 @@ export class Chap11Subchap02Component implements OnInit {
   }
   
   public buttonNotClicked(): void {
-    console.log('cacat');
     this.buttonClicked = false;
   }
 

@@ -3,7 +3,6 @@ import {
   Http, 
   Response 
 } from "@angular/http";
-import { map } from 'rxjs/operators';
 
 interface ISearchItem {
   name: string,
