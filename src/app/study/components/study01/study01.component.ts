@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { 
+  Component, 
+  OnInit,
+  ViewEncapsulation,
+  Input
+ } from '@angular/core';
 
 @Component({
   selector: 'fg-app-study01',
@@ -10,6 +15,10 @@ export class Study01Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+  @Input() zIndex: number;
+
+  onCloseModal() {
   }
 
 }

@@ -1,4 +1,26 @@
 <button class="btn btn-link" style="padding-left: 0" routerLink="/study">
-  <h4>Study - </h4>
+  <h4>Study - Various Projects</h4>
 </button>
-<h5>01 - </h5>
+<h5>01 - ng-modal 1</h5>
+<a href="https://github.com/mazdik" target="blank">
+  click for source...
+</a>
+<hr>
+<button type="button" class="btn btn-info" (click)="modalRoot.show()">Open modal</button>
+<fg-modal #modalRoot
+  [modalTitle]="'Demo modal'"
+  [width]="500"
+  [zIndex]="zIndex"
+  [maximizable]="true"
+  (close)="onCloseModal()">
+  <ng-container class="app-modal-body">
+    <h3>MODAL DIALOG</h3>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+  </ng-container>
+  <ng-container class="app-modal-footer">
+    <button type="button" class="btn btn-danger">Delete</button>&nbsp;
+    <button type="button" class="btn btn-info">Save</button>
+    <button type="button" class="btn btn-success" style="float: right;" (click)="modalRoot.hide()">Close</button>
+  </ng-container>
+</fg-modal>

@@ -179,6 +179,7 @@ import { Review4ParentComponent } from './review4/components/review4-parent/revi
 import { Review4Message1Service } from './review4/services/review4-message1.service';
 import { Review4Message2Service } from './review4/services/review4-message2.service';
 import { Review4Message3Service } from './review4/services/review4-message3.service';
+import { FgModalComponent } from './_others/components/fg-modal/fg-modal.component';
 
 @NgModule({
   declarations: [
@@ -342,7 +343,8 @@ import { Review4Message3Service } from './review4/services/review4-message3.serv
     ShowValueDirective,
     RepeatElementDirective,
     Review4ChildComponent,
-    Review4ParentComponent   
+    Review4ParentComponent,
+    FgModalComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
