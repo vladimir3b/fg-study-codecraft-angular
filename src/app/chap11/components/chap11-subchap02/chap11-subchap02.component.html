@@ -1,8 +1,52 @@
 <button class="btn btn-link" style="padding-left: 0" routerLink="/chap11">
   <h4>Chapter 11 - HTTP</h4>
 </button>
-<h5>02 - ... </h5>
-<a href="#" target="blank">
+<h5>02 - HTTP Example with Promises</h5>
+<a href="https://codecraft.tv/courses/angular/http/http-with-promises/" target="blank">
   click for tutorial
 </a>
 <hr>
+<div class="form-group row">
+  <div class="col-sm-5">
+    <input 
+      type="text" 
+      class="form-control" 
+      id="searchTerm" 
+      (focus)="buttonNotClicked()"
+      [(ngModel)]="searchTerm"
+      placeholder="Search a song or an artist...">
+  </div>
+  <div for="searchTerm" class="col-sm-2">
+    <button 
+      class="btn btn-info"
+      (click)="doSearch()">
+      Search
+    </button>
+  </div>
+</div>
+<br>
+<div 
+  *ngIf="searching"
+  class="row">
+  <div class="col alert alert-info">
+    Searching for {{ searchTerm }}...
+  </div>
+</div>
+
+<div 
+  *ngIf="noResults()"
+  class="row">
+  <div class="col alert alert-danger">
+    There aren't any items for {{ searchTerm }}!
+  </div>
+</div>
+
+<div class="list-group">
+  <a 
+    target="_blank"
+    href="{{item.link}}"
+    *ngFor="let item of _itunesSearch.searchResults"
+    class="list-group-item list-group-item-action list-group-item-light">
+    <img src="{{ item.thumbnail }}">&nbsp;&nbsp;{{ item.name }}
+  </a>    
+</div>

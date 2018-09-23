@@ -1,3 +1,4 @@
+import { ItunesSearchService } from './chap11/services/itunesSearch.service';
 import { MyService3 } from './chap10/services/myService3.service';
 import { MyService2 } from './chap10/services/myService2.service';
 import { MyService1 } from './chap10/services/myService1.service';
@@ -8,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 
 import { RootComponent } from './root.component';
@@ -179,7 +181,12 @@ import { Review4ParentComponent } from './review4/components/review4-parent/revi
 import { Review4Message1Service } from './review4/services/review4-message1.service';
 import { Review4Message2Service } from './review4/services/review4-message2.service';
 import { Review4Message3Service } from './review4/services/review4-message3.service';
+<<<<<<< HEAD
 import { FgModalComponent } from './_others/components/fg-modal/fg-modal.component';
+import { ItunesSearchObservableService } from './chap11/services/itunesSearchObservable.service';
+=======
+import { ItunesSearchObservableService } from './chap11/services/itunesSearchObservable.service';
+>>>>>>> 982edce918cbc023c04a30b6f1aa3dda1f0d92f8
 
 @NgModule({
   declarations: [
@@ -351,7 +358,8 @@ import { FgModalComponent } from './_others/components/fg-modal/fg-modal.compone
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpModule
   ],
   providers: [
     {
@@ -372,6 +380,8 @@ import { FgModalComponent } from './_others/components/fg-modal/fg-modal.compone
     Review4Message1Service,
     Review4Message2Service,
     Review4Message3Service,
+    ItunesSearchService,
+    ItunesSearchObservableService
   ],
   bootstrap: [RootComponent]
 })

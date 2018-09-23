@@ -3,10 +3,11 @@ import {
   OnInit 
 } from '@angular/core';
 import { 
-  HttpClient, 
-  HttpParams,
-  HttpHeaders 
-} from '@angular/common/http';
+  Http,
+  Headers, 
+  RequestOptions,
+  URLSearchParams
+} from '@angular/http';
 
 
 @Component({
@@ -18,16 +19,16 @@ export class Chap11Subchap01Component implements OnInit {
 
   public apiRoot: string = 'http://httpbin.org';
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: Http) { }
 
   ngOnInit() {
   }
 
   public doGET(): void {
     console.log('GET request');
-    const queryParameters: HttpParams = new HttpParams()
-      .set('firstName', 'John')
-      .set('lastName', 'Smith');
+    const queryParameters: URLSearchParams = new URLSearchParams()
+    queryParameters.set('firstName', 'John')
+    queryParameters.set('lastName', 'Smith');
     this._http.get(
       `${this.apiRoot}/get`, 
       { 
@@ -38,18 +39,14 @@ export class Chap11Subchap01Component implements OnInit {
   
   public doPOST(): void {
     console.log('POST request');
-    const queryParameters: HttpParams = new HttpParams()
-      .set('firstName', 'John')
-      .set('lastName', 'Smith');
+    const queryParameters: URLSearchParams = new URLSearchParams()
+      queryParameters.set('firstName', 'John')
+      queryParameters.set('lastName', 'Smith');
     this._http.post(
       `${this.apiRoot}/post`, 
       { 
         login: 'johnsmith46', 
         password: 'dsfg12@#$@242dsf'
-      }, 
-      {
-        params: queryParameters,
-        responseType: 'text' 
       })   
       .subscribe(response => console.log(response));
   }
@@ -57,36 +54,32 @@ export class Chap11Subchap01Component implements OnInit {
 
   public doPUT(): void {
     console.log('PUT request');
-    const queryParameters: HttpParams = new HttpParams()
-      .set('firstName', 'John')
-      .set('lastName', 'Smith');
+    const queryParameters: URLSearchParams = new URLSearchParams()
+      queryParameters.set('firstName', 'John')
+      queryParameters.set('lastName', 'Smith');
     this._http.put(
       `${this.apiRoot}/put`, 
       { 
         login: 'johnsmith46', 
         password: 'dsfg12@#$@242dsf'
-      }, 
-      {
-        params: queryParameters,
-        responseType: 'arraybuffer'
       })   
       .subscribe(response => console.log(response));
   }
   
   public doDELETE(): void {
     console.log('DELETE request');
-    const queryParameters: HttpParams = new HttpParams()
-      .set('firstName', 'John')
-      .set('lastName', 'Smith');
+    const queryParameters: URLSearchParams = new URLSearchParams()
+      queryParameters.set('firstName', 'John')
+      queryParameters.set('lastName', 'Smith');
     this._http.delete(`${this.apiRoot}/delete`, { params: queryParameters })   
       .subscribe(response => console.log(response));
   }
 
   public doGETAsPromise(): void {
     console.log('GET as a promise request');
-    const queryParameters: HttpParams = new HttpParams()
-      .set('firstName', 'John')
-      .set('lastName', 'Smith');
+    const queryParameters: URLSearchParams = new URLSearchParams()
+      queryParameters.set('firstName', 'John')
+      queryParameters.set('lastName', 'Smith');
     this._http.get(
       `${this.apiRoot}/get`, 
       { 
@@ -98,9 +91,9 @@ export class Chap11Subchap01Component implements OnInit {
 
   public doGETAsPromiseError(): void {
     console.log('GET as a promise request with an error');
-    const queryParameters: HttpParams = new HttpParams()
-      .set('firstName', 'John')
-      .set('lastName', 'Smith');
+    const queryParameters: URLSearchParams = new URLSearchParams()
+      queryParameters.set('firstName', 'John')
+      queryParameters.set('lastName', 'Smith');
     this._http.get(
       `${this.apiRoot}/post`, 
       { 
@@ -113,9 +106,9 @@ export class Chap11Subchap01Component implements OnInit {
 
   public doGETAsObservableError(): void {
     console.log('GET request with error');
-    const queryParameters: HttpParams = new HttpParams()
-      .set('firstName', 'John')
-      .set('lastName', 'Smith');
+    const queryParameters: URLSearchParams = new URLSearchParams()
+      queryParameters.set('firstName', 'John')
+      queryParameters.set('lastName', 'Smith');
     this._http.get(
       `${this.apiRoot}/post`, 
       { 
@@ -129,18 +122,17 @@ export class Chap11Subchap01Component implements OnInit {
 
   public doGETWithHeaders(): void {
     console.log('GET request with headers');
-    const headers = new HttpHeaders();
-    headers.append('Authorization', btoa('jacksparow:b3@p!r@7'));
-    
-    const queryParameters: HttpParams = new HttpParams()
-      .set('firstName', 'John')
-      .set('lastName', 'Smith');
-    this._http.get(
-      `${this.apiRoot}/get`, 
-      { 
-        params: queryParameters 
-      })   
+    const headers = new Headers();
+    headers.append('Authorization', btoa('jacksparow:b3@p!r@7'));    
+    const queryParameters: URLSearchParams = new URLSearchParams()
+    queryParameters.set('firstName', 'John')
+    queryParameters.set('lastName', 'Smith');
+    const options: RequestOptions = new RequestOptions();
+    options.headers = headers;
+    options.params = queryParameters;
+    this._http.get(`${this.apiRoot}/get`, options)   
       .subscribe(response => console.log(response));
   }
+
 
 }

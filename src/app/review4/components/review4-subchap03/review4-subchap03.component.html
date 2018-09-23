@@ -1,4 +1,43 @@
 <button class="btn btn-link" style="padding-left: 0" routerLink="/review4">
-  <h4>Review 4 - </h4>
+  <h4>Review 4 - Services, HTTP and Routing</h4>
 </button>
-<h5>03 - </h5>
+<h5>03 - Core HTTP API with httpClient</h5>
+<hr>
+
+<div class="row">
+  <div class="col text-center">
+    <button class="btn btn-primary" (click)="doGET()">GET</button>
+    <br>&nbsp;
+  </div>
+  <div class="col text-center">
+    <button class="btn btn-primary" (click)="doPOST()">POST</button>
+  </div>
+  <div class="col text-center">
+    <button class="btn btn-primary" (click)="doPUT()">PUT</button>
+  </div>
+  <div class="col text-center">
+    <button class="btn btn-primary" (click)="doDELETE()">DELETE</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col text-center">
+    <button class="btn btn-secondary" (click)="doGETAsPromise()">As Promise</button>
+    <br>&nbsp;
+  </div>
+  <div class="col text-center">
+    <button class="btn btn-secondary" (click)="doGETAsPromiseError()">Error As Promise</button>
+  </div>
+  <div class="col text-center">
+    <button class="btn btn-secondary" (click)="doGETAsObservableError()">Error As Observable</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col text-center">
+    <button class="btn btn-danger" (click)="doGETWithHeaders()">With Headers</button>
+    <br>&nbsp;
+  </div>
+</div>
+<hr>
+<div class="alert alert-info">
+  view the console...
+</div>
