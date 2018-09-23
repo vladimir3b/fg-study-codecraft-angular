@@ -12,4 +12,12 @@ export class Study05Component implements OnInit {
   ngOnInit() {
   }
 
+  editorOptions = {
+    theme: 'vs-light',
+    language: 'html'
+  };
+  code = `function hello() {
+	 alert('Hello world!');
+  }`;
+
 }

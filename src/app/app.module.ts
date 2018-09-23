@@ -10,6 +10,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { HTMLEscapeUnescapeModule } from 'html-escape-unescape';
+import { MonacoEditorModule } from 'ngx-monaco-editor';
+
 
 
 import { RootComponent } from './root.component';
@@ -181,12 +184,8 @@ import { Review4ParentComponent } from './review4/components/review4-parent/revi
 import { Review4Message1Service } from './review4/services/review4-message1.service';
 import { Review4Message2Service } from './review4/services/review4-message2.service';
 import { Review4Message3Service } from './review4/services/review4-message3.service';
-<<<<<<< HEAD
 import { FgModalComponent } from './_others/components/fg-modal/fg-modal.component';
 import { ItunesSearchObservableService } from './chap11/services/itunesSearchObservable.service';
-=======
-import { ItunesSearchObservableService } from './chap11/services/itunesSearchObservable.service';
->>>>>>> 982edce918cbc023c04a30b6f1aa3dda1f0d92f8
 
 @NgModule({
   declarations: [
@@ -355,11 +354,13 @@ import { ItunesSearchObservableService } from './chap11/services/itunesSearchObs
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
+    MonacoEditorModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    HTMLEscapeUnescapeModule 
   ],
   providers: [
     {

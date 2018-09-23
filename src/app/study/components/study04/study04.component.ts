@@ -12,4 +12,7 @@ export class Study04Component implements OnInit {
   ngOnInit() {
   }
 
+  editorOptions = {theme: 'vs-dark', language: 'html'};
+  code: string= 'function x() {\nconsole.log("Hello world!");\n}'
+
 }

@@ -1,4 +1,44 @@
 <button class="btn btn-link" style="padding-left: 0" routerLink="/study">
-  <h4>Study - </h4>
+  <h4>Study - Various Projects</h4>
 </button>
-<h5>04 - </h5>
+<h5>04 - ng-modal 4</h5>
+<a href="https://github.com/mazdik" target="blank">
+  click for source...
+</a>
+<hr>
+<div class="form-group">
+  <label for="header"><strong>Header</strong></label>
+  <input 
+    fgAppShowValue
+    type="email" 
+    class="form-control" 
+    id="header" 
+    [(ngModel)]="header"
+    placeholder="write a header...">
+    <br>
+    <label for="body"><strong>Body</strong></label>
+    <textarea 
+      class="form-control" 
+      id="body" 
+      [(ngModel)]="body"
+      rows="3"
+      placeholder="You may write HTML code here...">
+    </textarea>
+</div>
+<button 
+  type="button" 
+  class="btn btn-info" 
+  (click)="myModal.show()">
+  Open modal
+</button>
+<fg-modal
+  #myModal>
+  <div class="app-modal-header">
+    <h4>{{ header }}</h4>
+  </div>
+  <div 
+    [innerHTML]="body"
+    class="app-modal-body">
+  </div>
+</fg-modal>
+
