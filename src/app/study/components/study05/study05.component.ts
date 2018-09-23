@@ -13,11 +13,9 @@ export class Study05Component implements OnInit {
   }
 
   editorOptions = {
-    theme: 'vs-light',
-    language: 'html'
+    theme: 'vs-dark',
+    language: 'text/html'
   };
-  code = `function hello() {
-	 alert('Hello world!');
-  }`;
+  code = ``
 
 }

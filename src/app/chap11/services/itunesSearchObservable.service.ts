@@ -43,10 +43,6 @@ export class ItunesSearchObservableService {
             }
           });
           return results;
-        })
-      )
-    }
+        }))
   }
-
-
 }

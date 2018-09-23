@@ -1,15 +1,16 @@
-<div 
+<!-- <div 
   class="ui-modal-overlay" 
   [style.zIndex]="zIndex" 
   [ngStyle]="{'display': (visible && backdrop) ? 'block' : 'none'}">
-</div>
+</div> -->
 
 <div 
   class="ui-modal" 
   tabindex="-1" 
   role="dialog" 
   #modalRoot 
-  [ngStyle]="{'display': visible ? 'block' : 'none'}"
+  *ngIf="visible"
+  [ngStyle]="{'display': true ? 'block' : 'none'}"
   [style.width.px]="width" 
   [style.minWidth.px]="minWidth" 
   [style.zIndex]="contentzIndex" 

@@ -2,3 +2,28 @@
   <h4>Study - </h4>
 </button>
 <h5>06 - </h5>
+<hr>
+<div 
+  class="bg-light" 
+  [innerHTML]="HTMLCode">
+</div>
+<button 
+  class="btn btn-success"
+  (click)="editHTMLModal.show()">
+  Edit HTML
+</button>
+
+<fg-modal 
+  #editHTMLModal
+  [width]="800">
+  <div class="app-modal-header">
+    Edit HTML
+  </div> 
+  <div class="app-modal-body"> 
+    <ngx-monaco-editor
+      [options]="editorOptions" 
+      [(ngModel)]="HTMLCode">
+    </ngx-monaco-editor>
+  </div>
+ 
+</fg-modal>  
