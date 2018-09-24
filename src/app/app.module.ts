@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { HTMLEscapeUnescapeModule } from 'html-escape-unescape';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 
@@ -353,6 +354,7 @@ import { ItunesSearchObservableService } from './chap11/services/itunesSearchObs
     FgModalComponent
   ],
   imports: [
+    NgxDatatableModule,
     RouterModule.forRoot(appRoutes),
     MonacoEditorModule.forRoot(),
     FormsModule,
