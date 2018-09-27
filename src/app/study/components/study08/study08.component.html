@@ -1,4 +1,74 @@
 <button class="btn btn-link" style="padding-left: 0" routerLink="/study">
-  <h4>Study - </h4>
+  <h4>Study - Various Projects</h4>
 </button>
-<h5>08 - </h5>
+<h5>08 - Data binding in Detail</h5>
+<a href="https://www.dotnetcurry.com/angularjs/1424/angular-interpolation-property-data-binding" target="blank">
+  Interpolation and Property Binding
+</a> and
+<a href="https://www.dotnetcurry.com/angularjs/1425/angular-event-two-way-binding" target="blank">
+  Event Binding and Two-way Binding in Angular
+</a>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col alert alert-info">
+      <h5>Interpolation</h5>
+      I live in {{ myLocation.city }}.<br>
+      I would like to visit {{ myCity }}.<br>
+      I have a message: {{ showANewMessage() }} <br>
+      You have a message: {{ showANewMessageWithAGetter }}<br>      
+      <!--
+        you are from {{ yourLocation.state }} will throw an error 
+        because yourLocation is not defined until 3.5 seconds later
+        so we use expression yourLocation && yourLocation.state or
+        elvis operator/safe navigator yourLocation?.state
+      -->
+      You are from {{ yourLocation && yourLocation.city }} so  
+      you are from {{ yourLocation?.state }}.<br>
+      {{ myLocation }}<br>{{ yourLocation }}<br>
+
+      <button class="{{ successButton.style }}">
+        {{ successButton.text }}
+      </button>&nbsp;
+      <button class="{{ dangerButton.style }}">
+        {{ dangerButton.text }}
+      </button>&nbsp;
+      <button class="{{ changingButton.style }}">
+        <strong>This is a changing button:</strong> {{ changingButton.text }}
+      </button><br><br>
+      <h5>Property binding</h5>
+      <span [innerHTML]="someHTMLCode">I will never show up :(</span><br>
+      <span 
+        [style.color]="color"
+        [style.font-size]="size"
+        [style.fontStyle]="fontStyle"
+        bind-innerHTML="'I live in '+ myCity + '.'">        
+      </span><br>
+      <button 
+        class="btn" 
+        [class.btn-primary]="isDisabled"
+        [class.btn-warning]="!isDisabled">
+        I will change...
+      </button>
+      <h5>Interpolatin vs property binding</h5>
+      <!-- {{ isDisabled }} is always 'true' because it is a string... -->
+      <button 
+        disabled="{{ isDisabled }}"
+        class="btn btn-warning">
+        I am always disabled...
+      </button>&nbsp;
+      <button 
+        [disabled]="isDisabled"
+        class="btn btn-warning">
+        I am not always disabled...
+      </button>      
+      <h5>Event Binding in Angular</h5>
+      <div 
+        style="width: 320px; height:240px; vertical-align: middle; line-height: 240px"
+        class="alert alert-danger text-center">
+        <h1>Big in Japan</h1>
+      </div>
+
+    </div>
+  </div>
+</div>
