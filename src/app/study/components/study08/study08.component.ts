@@ -34,6 +34,8 @@ export class Study08Component implements OnInit {
   public color: string = 'red';
   public size: string = '20px';
   public fontStyle: string = 'italic';
+  public TwoWayDataBinding1: string;
+  public TwoWayDataBinding2: string;
 
   constructor() { 
     this.isDisabled = true;
@@ -80,5 +82,17 @@ export class Study08Component implements OnInit {
   get showANewMessageWithAGetter(): string {
     return `You don't like your city, ${this.yourLocation && this.yourLocation.city} and you want to live in ${this.myCity}.`;
   }
+
+  public onClick(event: any): void {
+    console.log('You are big in Japan...', event);
+  }
+
+  public x: number = 0;
+  public y: number = 0;
+  public mouseMove(event: any): void {
+    this.x = event.x;
+    this.y = event.y;
+  }
+
 
 }

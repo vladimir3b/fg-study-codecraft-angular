@@ -12,7 +12,10 @@
 <div class="container">
   <div class="row">
     <div class="col alert alert-info">
-      <h5>Interpolation</h5>
+
+
+
+      <h2>Interpolation</h2>
       I live in {{ myLocation.city }}.<br>
       I would like to visit {{ myCity }}.<br>
       I have a message: {{ showANewMessage() }} <br>
@@ -36,7 +39,10 @@
       <button class="{{ changingButton.style }}">
         <strong>This is a changing button:</strong> {{ changingButton.text }}
       </button><br><br>
-      <h5>Property binding</h5>
+
+
+
+      <h2>Property binding</h2>
       <span [innerHTML]="someHTMLCode">I will never show up :(</span><br>
       <span 
         [style.color]="color"
@@ -49,8 +55,11 @@
         [class.btn-primary]="isDisabled"
         [class.btn-warning]="!isDisabled">
         I will change...
-      </button>
-      <h5>Interpolatin vs property binding</h5>
+      </button><br><br>
+
+
+
+      <h2>Interpolatin vs property binding</h2>
       <!-- {{ isDisabled }} is always 'true' because it is a string... -->
       <button 
         disabled="{{ isDisabled }}"
@@ -61,14 +70,38 @@
         [disabled]="isDisabled"
         class="btn btn-warning">
         I am not always disabled...
-      </button>      
-      <h5>Event Binding in Angular</h5>
+      </button><br><br>
+
+
+
+      <h2>Event Binding in Angular</h2>
       <div 
+        on-click="onClick($event)"
+        (mousemove)="mouseMove($event)"
         style="width: 320px; height:240px; vertical-align: middle; line-height: 240px"
         class="alert alert-danger text-center">
         <h1>Big in Japan</h1>
-      </div>
+      </div>  
+      <div>
+        <strong>x:</strong> {{ x }}
+        <strong>y:</strong> {{ y }}
+      </div><br><br>
 
+
+
+      <h2>Two-Way Data Binding</h2>
+      <input 
+        type="text"
+        [(ngModel)]="TwoWayDataBinding1"
+        class="form-control">
+      <strong>You've written:</strong> {{ TwoWayDataBinding1 }}<br><br>
+      <!-- These two are equivalent -->
+      <input 
+        type="text"
+        [ngModel]="TwoWayDataBinding2"
+        (ngModelChange)="TwoWayDataBinding2 = $event"
+        class="form-control">
+      <strong>You've written:</strong> {{ TwoWayDataBinding2 }}
     </div>
   </div>
 </div>
