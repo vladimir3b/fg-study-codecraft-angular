@@ -187,6 +187,9 @@ import { Review4Message2Service } from './review4/services/review4-message2.serv
 import { Review4Message3Service } from './review4/services/review4-message3.service';
 import { FgModalComponent } from './_others/components/fg-modal/fg-modal.component';
 import { ItunesSearchObservableService } from './chap11/services/itunesSearchObservable.service';
+import { FullNameInputComponent } from './study/components/full-name-input/full-name-input.component';
+import { FullNameTextareaComponent } from './study/components/full-name-textarea/full-name-textarea.component';
+import { FullNameChangerComponent } from './study/components/full-name-changer/full-name-changer.component';
 
 @NgModule({
   declarations: [
@@ -351,7 +354,10 @@ import { ItunesSearchObservableService } from './chap11/services/itunesSearchObs
     RepeatElementDirective,
     Review4ChildComponent,
     Review4ParentComponent,
-    FgModalComponent
+    FgModalComponent,
+    FullNameInputComponent,
+    FullNameTextareaComponent,
+    FullNameChangerComponent
   ],
   imports: [
     NgxDatatableModule,

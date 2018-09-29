@@ -2,3 +2,21 @@
   <h4>Study - </h4>
 </button>
 <h5>09 - </h5>
+<hr>
+<fg-app-full-name-changer [controller]="'textareaController'">
+  <fg-app-full-name-input 
+    class="inputController"
+    [(name)]="name">
+  </fg-app-full-name-input>
+  <fg-app-full-name-textarea 
+    class="textareaController"
+    [(name)]="name">
+  </fg-app-full-name-textarea>
+</fg-app-full-name-changer>
+
+<h5>Results</h5>
+<div class="alert alert-info">
+  <strong>First Name:</strong> {{ name?.firstName }} <br>
+  <strong>Middle Name:</strong> {{ name?.middleName }} <br>
+  <strong>Last Name:</strong> {{ name?.lastName }} <br>
+</div>

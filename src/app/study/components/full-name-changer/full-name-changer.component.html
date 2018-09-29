@@ -1,0 +1,41 @@
+<ng-content 
+  *ngIf="controller === 'inputController'"
+  select=".inputController">
+</ng-content>
+<ng-content 
+  *ngIf="controller === 'textareaController'"
+  select=".textareaController">
+</ng-content>
+<hr>
+<div class="form-check">
+  <input 
+    class="form-check-input" 
+    type="radio" 
+    name="controllerType" 
+    id="inputController" 
+    value="inputController"
+    (change)="onChangeController($event.target.value)" 
+    [checked]="controller === 'inputController'">
+  <label 
+    class="form-check-label" 
+    for="inputController">
+    Input Controller
+  </label>
+</div>
+<div class="form-check">
+  <input 
+    class="form-check-input" 
+    type="radio" 
+    name="controllerType" 
+    id="textareaController" 
+    value="textareaController"
+    (change)="onChangeController($event.target.value)" checked="true"
+    [checked]="controller === 'textareaController'">
+  <label 
+    class="form-check-label" 
+    for="textareaController">
+    Textarea Controller
+  </label>
+</div>
+<hr>
+
