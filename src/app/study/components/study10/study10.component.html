@@ -1,4 +1,12 @@
 <button class="btn btn-link" style="padding-left: 0" routerLink="/study">
-  <h4>Study - </h4>
+  <h4>Study - Various Projects</h4>
 </button>
-<h5>10 - </h5>
+<h5>10 - modal <-> tab transformer</h5>
+<hr>
+<fg-app-new-friend-form
+ [(myFriend)]="amigo">  
+</fg-app-new-friend-form>
+
+<pre>
+    {{amigo | json}}
+</pre>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IFriend } from '../../data/my-friend.interface';
 
 @Component({
   selector: 'fg-app-study10',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Study10Component implements OnInit {
 
+  public amigo: IFriend = {
+    name: {
+      firstName: 'John',
+      middleName: 'David',
+      lastName: 'Smith'
+    },
+    gender: 'male',
+    age: 45,
+    address: 'street His Street, number 45'
+  }
+
   constructor() { }
 
   ngOnInit() {
+  }
+  
+  public receivedNewFriend($event: IFriend) : void {
+    console.log('Data were recived', $event);
   }
 
 }

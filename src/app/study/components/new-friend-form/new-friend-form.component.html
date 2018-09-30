@@ -1,0 +1,222 @@
+<form 
+  novalidate 
+  #myFriendForm="ngForm"
+  (ngSubmit)="onSubmit()"> 
+
+
+  <!-- full name form -->
+  <fieldset ngModelGroup="fullName">
+
+    <!-- first name -->
+    <div class="form-group row">
+      <label 
+        for="firstNameInput" 
+        class="col-sm-3 col-form-label text-sm-right">
+          <strong>First name</strong>
+      </label>
+      <div class="col-sm-9">
+        <input 
+          type="text" 
+          [(ngModel)]="myFriend.name.firstName"
+          #firstNameInput="ngModel"          
+          class="form-control" 
+          id="firstNameInput" 
+          name="firstName"
+          minlength="{{ nameMinLength }}"
+          placeholder="first name..."       
+          required>
+        <small
+          *ngIf="firstNameInput.invalid && (firstNameInput.dirty || firstNameInput.touched || submitted)"
+          class="form-text text-danger">
+          <span *ngIf="firstNameInput.errors.required">
+            First name is required.
+          </span>
+          <span *ngIf="firstNameInput.errors.minlength">
+            First name must be at least {{ nameMinLength }} characters long.
+          </span>
+        </small>
+      </div>      
+      
+    </div>
+
+
+    <!-- middle name -->
+    <div class="form-group row">
+      <label for="middleNameInput" 
+        class="col-sm-3 col-form-label text-sm-right">
+        <strong>Middle name</strong>
+      </label>
+      <div class="col-sm-9">
+        <input 
+          type="text" 
+          [(ngModel)]="myFriend.name.middleName"
+          class="form-control" 
+          id="middleNameInput"
+          name="middleName"
+          placeholder="middle name...">        
+      </div>
+    </div>  
+
+    <!-- last name -->
+    <div class="form-group row">
+      <label for="lastNameInput" 
+        class="col-sm-3 col-form-label text-sm-right">
+        <strong>Last name</strong>
+      </label>
+      <div class="col-sm-9">
+        <input 
+          type="text" 
+          [(ngModel)]="myFriend.name.lastName"
+          #lastNameInput="ngModel"
+          class="form-control" 
+          id="lastNameInput" 
+          name="lastName"
+          placeholder="last name..."
+          minlength="{{ nameMinLength }}"
+          required>
+        <small
+          *ngIf="lastNameInput.invalid && (lastNameInput.dirty || lastNameInput.touched || submitted)"
+          class="form-text text-danger">
+          <span *ngIf="lastNameInput.errors.required">
+            Last name is required.
+          </span>
+          <span *ngIf="lastNameInput.errors.minlength">
+            Last name must be at least {{ nameMinLength }} characters long.
+          </span>
+        </small>
+      </div>
+
+    </div>  
+
+  </fieldset>
+  
+
+  <!-- age form -->
+  <div class="form-group row">
+    <label for="ageInput" 
+      class="col-sm-3 col-form-label text-sm-right">
+      <strong>Age</strong>
+    </label>
+    <div class="col-sm-9">
+      <input 
+        type="number" 
+        [(ngModel)]="myFriend.age"
+        #ageInput="ngModel"
+        class="form-control" 
+        id="ageInput" 
+        name="age"
+        placeholder="age..."
+        min="16"
+        max="100"
+        required>                
+      <small
+        *ngIf="ageInput.invalid && (ageInput.dirty || ageInput.touched || submitted)"
+        class="form-text text-danger">
+        <span *ngIf="ageInput.errors.required">
+          Age is required.
+        </span>
+        <span *ngIf="ageInput.errors.min<16||ageInput.errors.max>100">
+          Age must be at between 16 and 100.
+        </span>
+        <!-- for the moment this doesn't work and angular doesn't have validators for min nor max -->
+      </small>
+    </div>
+  </div>  
+
+
+  <!-- gender form -->
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-3 pt-0 text-sm-right">
+        <strong>Gender</strong>
+      </legend>
+      <div class="col-sm-9">
+        <div class="form-check">
+          <input 
+            class="form-check-input" 
+            #genderInput="ngModel"
+            type="radio" 
+            id="sexMale" 
+            name="gender"            
+            value="male" 
+            [(ngModel)]="myFriend.gender"
+            required>
+          <label class="form-check-label" for="sexMale">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input 
+            class="form-check-input" 
+            type="radio" 
+            id="sexFemale"
+            name="gender"
+            value="female"
+            [(ngModel)]="myFriend.gender">
+          <label class="form-check-label" for="sexFemale">
+            Female
+          </label>
+        </div>  
+        <small
+          *ngIf="(genderInput.invalid && (genderInput.dirty || genderInput.touched || submitted))"
+          class="form-text text-danger">
+          <span *ngIf="genderInput.errors.required">
+            Gender is required.
+          </span>
+        </small>      
+      </div>
+    </div>
+  </fieldset>
+
+
+  <!-- address form -->
+  <div class="form-group row">
+    <label 
+      for="addressTextarea" 
+      class="col-sm-3 col-form-label text-sm-right">
+        <strong>Address</strong>
+    </label>
+    <div class="col-sm-9">
+      <textarea
+        type="text" 
+        [(ngModel)]="myFriend.address"
+        #addressTextarea="ngModel"
+        class="form-control" 
+        id="addressTextarea"
+        name="address"
+        placeholder="address..." 
+        required
+        minlength="{{ addressMinLength }}"></textarea>
+      <small
+        *ngIf="addressTextarea.invalid && (addressTextarea.dirty || addressTextarea.touched || submitted)"
+        class="form-text text-danger">
+        <span *ngIf="addressTextarea.errors.required">
+          Address is required.
+        </span>
+        <span *ngIf="addressTextarea.errors.minlength">
+          Address must be at least {{ addressMinLength }} characters long.
+        </span>
+      </small>
+    </div>
+  </div> 
+
+  <!-- form buttons -->
+  <div class="form-group row">
+    <div class="col-form-label col-sm-3 pt-0 text-sm-right">
+      <button 
+        type="submit" 
+        class="btn btn-outline-info btn-block">
+        Add person
+      </button>
+    </div>
+    <div class="col-sm-9">
+      <button 
+        type="button" 
+        (click)="_resetTheForm()"
+        class="btn btn-outline-danger btn-block">
+        Reset
+      </button>
+    </div>
+  </div>
+
+</form>

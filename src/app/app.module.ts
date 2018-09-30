@@ -13,6 +13,7 @@ import { HttpModule } from '@angular/http';
 import { HTMLEscapeUnescapeModule } from 'html-escape-unescape';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 
 
@@ -190,6 +191,7 @@ import { ItunesSearchObservableService } from './chap11/services/itunesSearchObs
 import { FullNameInputComponent } from './study/components/full-name-input/full-name-input.component';
 import { FullNameTextareaComponent } from './study/components/full-name-textarea/full-name-textarea.component';
 import { FullNameChangerComponent } from './study/components/full-name-changer/full-name-changer.component';
+import { NewFriendFormComponent } from './study/components/new-friend-form/new-friend-form.component';
 
 @NgModule({
   declarations: [
@@ -357,7 +359,8 @@ import { FullNameChangerComponent } from './study/components/full-name-changer/f
     FgModalComponent,
     FullNameInputComponent,
     FullNameTextareaComponent,
-    FullNameChangerComponent
+    FullNameChangerComponent,
+    NewFriendFormComponent
   ],
   imports: [
     NgxDatatableModule,
@@ -368,7 +371,8 @@ import { FullNameChangerComponent } from './study/components/full-name-changer/f
     BrowserModule,
     HttpClientModule,
     HttpModule,
-    HTMLEscapeUnescapeModule 
+    HTMLEscapeUnescapeModule,
+    TabsModule.forRoot()
   ],
   providers: [
     {
