@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Study11Component implements OnInit {
 
+  public objectValueParent = { value: 'John is singing a song.' };
+  public nonObjectValueParent = 'Ana is drinking bear.';
+
   constructor() { }
 
   ngOnInit() {

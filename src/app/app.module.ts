@@ -192,6 +192,7 @@ import { FullNameInputComponent } from './study/components/full-name-input/full-
 import { FullNameTextareaComponent } from './study/components/full-name-textarea/full-name-textarea.component';
 import { FullNameChangerComponent } from './study/components/full-name-changer/full-name-changer.component';
 import { NewFriendFormComponent } from './study/components/new-friend-form/new-friend-form.component';
+import { ChildComponentWithObjectAsPropertyComponent } from './study/components/child-component-with-object-as-property/child-component-with-object-as-property.component';
 
 @NgModule({
   declarations: [
@@ -360,7 +361,8 @@ import { NewFriendFormComponent } from './study/components/new-friend-form/new-f
     FullNameInputComponent,
     FullNameTextareaComponent,
     FullNameChangerComponent,
-    NewFriendFormComponent
+    NewFriendFormComponent,
+    ChildComponentWithObjectAsPropertyComponent
   ],
   imports: [
     NgxDatatableModule,

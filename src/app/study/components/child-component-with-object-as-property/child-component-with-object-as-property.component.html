@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-2 text-right">
+    <label for="nonObject" class="font-weight-bold">Non object:</label>
+  </div>
+  <div class="col-10">
+    <input 
+      id="nonObject"
+      type="text" 
+      class="form-control"
+      [(ngModel)]="nonObjectValue">
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    &nbsp;
+  </div>
+</div>
+<div class="row">
+  <div class="col-2 text-right">
+      <label for="object" class="font-weight-bold">With object:</label>
+  </div>
+  <div class="col-10">
+    <input 
+      id="object"
+      type="text" 
+      class="form-control"
+      [(ngModel)]="objectValue.value">
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    &nbsp;
+  </div>
+</div>
+
+<div class="alert alert-info">
+  <div>
+    <strong>nonObjectValue in child component:</strong> {{nonObjectValue}}
+  </div>    
+  <div>
+      <strong>objectValue in child component:</strong> {{objectValue.value}}
+  </div>   
+</div>

@@ -1,4 +1,18 @@
 <button class="btn btn-link" style="padding-left: 0" routerLink="/study">
-  <h4>Study - </h4>
+  <h4>Study - Various Projects</h4>
 </button>
-<h5>11 - </h5>
+<h5>11 - @Input() with Values and Objects</h5>
+<hr>
+<fg-app-child-component-with-object-as-property
+  [objectValue] = "objectValueParent"
+  [nonObjectValue]="nonObjectValueParent">
+</fg-app-child-component-with-object-as-property>
+<br>
+<div class="alert alert-success">
+  <div>
+    <strong>nonObjectValue in parent component:</strong> {{ nonObjectValueParent }}
+  </div>
+  <div>
+    <strong>objectValue in parent component:</strong> {{ objectValueParent.value }}
+  </div>
+</div>
