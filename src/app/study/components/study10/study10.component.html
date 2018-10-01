@@ -3,10 +3,92 @@
 </button>
 <h5>10 - modal <-> tab transformer</h5>
 <hr>
-<fg-app-new-friend-form
+
+
+<div class="row">
+  <div class="col-sm-3 text-sm-right">
+    <strong>First name</strong>
+  </div>
+  <div class="col-sm-9">
+    {{ amigo.name.firstName }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 text-sm-right">
+    <strong>Middle name</strong>
+  </div>
+  <div class="col-sm-9">
+    {{ amigo.name.middleName }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 text-sm-right">
+    <strong>Last name</strong>
+  </div>
+  <div class="col-sm-9">
+    {{ amigo.name.lastName }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 text-sm-right">
+    <strong>Age</strong>
+  </div>
+  <div class="col-sm-9">
+    {{ amigo.age }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 text-sm-right">
+    <strong>Gender</strong>
+  </div>
+  <div class="col-sm-9">
+    {{ (amigo.gender === 'male') ? 'man' : 'woman' }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 text-sm-right">
+    <strong>Address</strong>
+  </div>
+  <div class="col-sm-9">
+    {{ amigo.address }}
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    &nbsp;
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <button 
+      class="btn btn-outline-info btn-block"
+      (click)="editMyFriend.show()">
+      Edit friend...
+    </button>
+  </div>
+</div>
+
+<fg-modal
+  [maximizable]="true"
+  [width]="640"
+  [minWidth]="600"
+  #editMyFriend>
+  <div class="app-modal-header">
+    <h5>Edit friend {{ amigo.name.firstName }} {{ amigo.name.lastName }}</h5>
+  </div>
+  <div class="container app-modal-body">
+    <fg-app-new-friend-form
+      [(myFriend)]="amigo"
+      (myFriendChange)="editMyFriend.hide()">  
+    </fg-app-new-friend-form>
+  </div>
+</fg-modal>
+
+
+<!-- <fg-app-new-friend-form
  [(myFriend)]="amigo">  
 </fg-app-new-friend-form>
 
 <pre>
-    {{amigo | json}}
-</pre>
+  {{amigo | json}}
+</pre> -->
