@@ -4,7 +4,32 @@
 <h5>10 - modal <-> tab transformer</h5>
 <hr>
 
+<div class="row bg-secondary text-white p-2">
+  <div class="col-1 font-weight-bold text-right">Index</div>
+  <div class="col-2 font-weight-bold">First name</div>
+  <div class="col-2 font-weight-bold">Middle name</div>
+  <div class="col-2 font-weight-bold">Last name</div>
+  <div class="col-1 font-weight-bold">Age</div>
+  <div class="col-1 font-weight-bold">Gender</div>
+  <div class="col-3 font-weight-bold">Functions</div>
+</div>
+<div 
+  *ngFor="let friend of myFriends; let index=index"
+  class="row p-1"
+  [ngClass]="{'bg-light': index%2 === 1}">
+  <div class="col-1 text-right">{{ index + 1 }}</div>
+  <div class="col-2">{{ friend.name.firstName }}</div>
+  <div class="col-2">{{ friend.name.middleName }}</div>
+  <div class="col-2">{{ friend.name.lastName }}</div>
+  <div class="col-1">{{ friend.age }}</div>
+  <div class="col-1">{{ friend.gender }}</div>
+  <div class="col-3">
+    <button class="btn btn-outline-success btn-sm">Edit</button>&nbsp;
+    <button class="btn btn-outline-danger btn-sm">Delete</button>
+  </div>
+</div>
 
+<!-- 
 <div class="row">
   <div class="col-sm-3 text-sm-right">
     <strong>First name</strong>
@@ -57,8 +82,10 @@
   <div class="col">
     &nbsp;
   </div>
-</div>
-<div class="row">
+</div> -->
+
+<!-- editing modal -->
+<!-- <div class="row">
   <div class="col">
     <button 
       class="btn btn-outline-info btn-block"
@@ -67,7 +94,6 @@
     </button>
   </div>
 </div>
-
 <fg-modal
   [maximizable]="true"
   [width]="640"
@@ -82,13 +108,15 @@
       (myFriendChange)="editMyFriend.hide()">  
     </fg-app-new-friend-form>
   </div>
-</fg-modal>
+</fg-modal> -->
 
 
-<!-- <fg-app-new-friend-form
- [(myFriend)]="amigo">  
-</fg-app-new-friend-form>
+<!-- editing tabs -->
 
-<pre>
-  {{amigo | json}}
-</pre> -->
+<!-- <div>
+  <tabset>
+    <tab heading="Basic title" id="tab1">Basic content</tab>
+    <tab heading="Basic Title 1">Basic content 1</tab>
+    <tab heading="Basic Title 2">Basic content 2</tab>
+  </tabset>
+</div> -->
