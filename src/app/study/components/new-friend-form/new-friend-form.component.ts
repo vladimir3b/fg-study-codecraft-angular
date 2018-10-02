@@ -16,8 +16,7 @@ import { Friend } from '../../data/my-friend.class';
   templateUrl: './new-friend-form.component.html',
   styleUrls: ['./new-friend-form.component.scss']
 })
-export class NewFriendFormComponent implements OnInit{
-
+export class NewFriendFormComponent implements OnInit {
   @Input('myFriend') public myFriendInput: IFriend;   
   @Input() public addressMinLength: number;
   @Input() public nameMinLength: number;  
@@ -33,15 +32,11 @@ export class NewFriendFormComponent implements OnInit{
   ngOnInit() {
     this.addressMinLength = this.addressMinLength || 10;
     this.nameMinLength = this.nameMinLength || 3; 
-    if (this.myFriendInput) {
-      this.myFriend.name.firstName = this.myFriendInput.name.firstName;
-      this.myFriend.name.lastName = this.myFriendInput.name.lastName;
-      this.myFriend.name.middleName = this.myFriendInput.name.middleName;
-      this.myFriend.age = this.myFriendInput.age;
-      this.myFriend.address = this.myFriendInput.address;
-      this.myFriend.gender = this.myFriendInput.gender
-    } 
+    this.myFriend = JSON.parse(JSON.stringify(this.myFriendInput));
+    // use this to clone object:
+    // https://scotch.io/bar-talk/copying-objects-in-javascript
   }
+
 
   private _resetTheForm(): void {
     this.submitted = false;
@@ -60,7 +55,7 @@ export class NewFriendFormComponent implements OnInit{
         gender: this.myFriend.gender,
         address: this.myFriend.address
       });
-      this._resetTheForm;
+      this._resetTheForm();
     } else {
       this.submitted = true;
     }

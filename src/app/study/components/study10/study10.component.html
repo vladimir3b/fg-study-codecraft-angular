@@ -14,101 +14,62 @@
   <div class="col-3 font-weight-bold">Functions</div>
 </div>
 <div 
-  *ngFor="let friend of myFriends; let index=index"
+  *ngFor="let friend of myFriends | slice:startItem:endItem; let index=index"
   class="row p-1"
   [ngClass]="{'bg-light': index%2 === 1}">
-  <div class="col-1 text-right">{{ index + 1 }}</div>
+  <div class="col-1 text-right">{{ startItem + index + 1 }}</div>
   <div class="col-2">{{ friend.name.firstName }}</div>
   <div class="col-2">{{ friend.name.middleName }}</div>
   <div class="col-2">{{ friend.name.lastName }}</div>
   <div class="col-1">{{ friend.age }}</div>
   <div class="col-1">{{ friend.gender }}</div>
   <div class="col-3">
-    <button class="btn btn-outline-success btn-sm">Edit</button>&nbsp;
+    <button 
+      (click)="editFriend(startItem + index); showEdit(); editMyFriend.show();"
+      class="btn btn-outline-success btn-sm">
+      Edit
+    </button>&nbsp;
     <button class="btn btn-outline-danger btn-sm">Delete</button>
   </div>
 </div>
-
-<!-- 
 <div class="row">
-  <div class="col-sm-3 text-sm-right">
-    <strong>First name</strong>
-  </div>
-  <div class="col-sm-9">
-    {{ amigo.name.firstName }}
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-3 text-sm-right">
-    <strong>Middle name</strong>
-  </div>
-  <div class="col-sm-9">
-    {{ amigo.name.middleName }}
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-3 text-sm-right">
-    <strong>Last name</strong>
-  </div>
-  <div class="col-sm-9">
-    {{ amigo.name.lastName }}
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-3 text-sm-right">
-    <strong>Age</strong>
-  </div>
-  <div class="col-sm-9">
-    {{ amigo.age }}
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-3 text-sm-right">
-    <strong>Gender</strong>
-  </div>
-  <div class="col-sm-9">
-    {{ (amigo.gender === 'male') ? 'man' : 'woman' }}
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-3 text-sm-right">
-    <strong>Address</strong>
-  </div>
-  <div class="col-sm-9">
-    {{ amigo.address }}
-  </div>
+  <div class="col">&nbsp;</div>
 </div>
 <div class="row">
   <div class="col">
-    &nbsp;
+    <pagination 
+      [boundaryLinks]="true" 
+      [maxSize]="5"
+      [itemsPerPage]="numberOfFriendsListed"
+      [totalItems]="myFriends.length"
+      (pageChanged)="pageChanged($event)">
+    </pagination>
   </div>
-</div> -->
+</div>
 
 <!-- editing modal -->
-<!-- <div class="row">
-  <div class="col">
-    <button 
-      class="btn btn-outline-info btn-block"
-      (click)="editMyFriend.show()">
-      Edit friend...
-    </button>
-  </div>
-</div>
 <fg-modal
   [maximizable]="true"
   [width]="640"
   [minWidth]="600"
-  #editMyFriend>
-  <div class="app-modal-header">
-    <h5>Edit friend {{ amigo.name.firstName }} {{ amigo.name.lastName }}</h5>
+  #editMyFriend> 
+  <div 
+    *ngIf="showEditModal" 
+    class="app-modal-header">
+    <h5>
+      Edit friend {{ editedFriend.name.firstName }} 
+      {{ editedFriend.name.lastName }}
+    </h5>
   </div>
-  <div class="container app-modal-body">
+  <div 
+    *ngIf="showEditModal"
+    class="container app-modal-body">    
     <fg-app-new-friend-form
-      [(myFriend)]="amigo"
-      (myFriendChange)="editMyFriend.hide()">  
+      [(myFriend)]="editedFriend"
+      (myFriendChange)="editMyFriend.hide(); hideEdit();">  
     </fg-app-new-friend-form>
-  </div>
-</fg-modal> -->
+  </div>   
+</fg-modal>
 
 
 <!-- editing tabs -->

@@ -14,6 +14,7 @@ import { HTMLEscapeUnescapeModule } from 'html-escape-unescape';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
 
@@ -374,7 +375,8 @@ import { ChildComponentWithObjectAsPropertyComponent } from './study/components/
     HttpClientModule,
     HttpModule,
     HTMLEscapeUnescapeModule,
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    PaginationModule.forRoot()
   ],
   providers: [
     {

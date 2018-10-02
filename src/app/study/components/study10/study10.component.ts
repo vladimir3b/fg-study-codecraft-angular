@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { IFriend } from '../../data/my-friend.interface';
 import { MY_FRIENDS } from '../../data/my-friends.data';
+import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 
 @Component({
   selector: 'fg-app-study10',
@@ -10,26 +11,46 @@ import { MY_FRIENDS } from '../../data/my-friends.data';
 })
 export class Study10Component implements OnInit {
 
-  public myFriends: Array<IFriend> = MY_FRIENDS
-
-  public amigo: IFriend = {
-    name: {
-      firstName: 'John',
-      middleName: 'David',
-      lastName: 'Smith'
-    },
-    gender: 'male',
-    age: 45,
-    address: 'street His Street, number 45'
+  public showEditModal: boolean;
+  public numberOfFriendsListed: number = 10;
+  public myFriends: Array<IFriend> = MY_FRIENDS;
+  public startItem: number;
+  public endItem:number;
+  public editedFriendIndex: number;
+  public get editedFriend(): IFriend {
+    return this.myFriends[this.editedFriendIndex];
   }
-
+  public set editedFriend(data: IFriend) {
+    this.myFriends[this.editedFriendIndex] = data;
+  }
+ 
   constructor() { }
 
   ngOnInit() {
+    this.startItem = 0;
+    this.endItem = this.numberOfFriendsListed;
   }
   
+  pageChanged(event: PageChangedEvent): void {
+    this.startItem = (event.page - 1) * event.itemsPerPage;
+    this.endItem = event.page * event.itemsPerPage;
+  }
+
   public receivedNewFriend($event: IFriend) : void {
     console.log('Data were recived', $event);
   }
+
+  public editFriend(index): void {    
+    this.editedFriendIndex = index;
+  }
+
+  public hideEdit(): void {
+    this.showEditModal = false;
+  }
+  
+  public showEdit(): void {
+    this.showEditModal = true;
+  }
+
 
 }
