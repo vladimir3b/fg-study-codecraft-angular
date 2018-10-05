@@ -38,24 +38,25 @@
   </div>
 </div>
 
+<button class="btn btn-info" (click)="showOther=true">
+  show other...
+</button>
 
-<!-- <fg-modal
-  [maximizable]="true"
-  [width]="640"
-  [minWidth]="600"
-  #editMyFriend> 
+<fg-app-modal-to-tab   
+  *ngIf='showOther'
+  [controller]="'modal'"
+  (close)="activateEdit=false">
+  <div class="control-header">
+    ana bea bere
+  </div>
+  <div class="control-body">
+    marcel nu mai cere
+  </div>
+</fg-app-modal-to-tab>
 
-  <div 
-    *ngIf="showEditModal"
-    class="container app-modal-body">    
-    <fg-app-new-friend-form
-      [(myFriend)]="editedFriend"
-      (myFriendChange)="editMyFriend.hide(); hideEdit();">  
-    </fg-app-new-friend-form>
-  </div>   
-</fg-modal> -->
 
-<fg-app-modal-to-tab 
+
+<fg-app-modal-to-tab   
   *ngIf='activateEdit'
   [controller]="'modal'"
   (close)="activateEdit=false">

@@ -12,6 +12,7 @@ import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 export class Study10Component implements OnInit {
 
   public activateEdit: boolean;
+  public showOther: boolean;
   public numberOfFriendsListed: number = 10;
   public myFriends: Array<IFriend> = MY_FRIENDS;
   public startItem: number;
@@ -28,6 +29,7 @@ export class Study10Component implements OnInit {
 
   ngOnInit() {
     this.activateEdit = false;
+    this.showOther = false;
     this.startItem = 0;
     this.endItem = this.numberOfFriendsListed;
   }
