@@ -1,0 +1,25 @@
+<!-- editing with modal -->
+<div *ngIf=" controller === 'modal' ">
+  <fg-modal
+    [maximizable]="true"
+    [width]="640"
+    [minWidth]="600"
+    (close)="showUs()"
+    #modalEditor> 
+    <div class="app-modal-header">
+      <ng-content select=".control-header"></ng-content>
+    </div>
+    <div class="app-modal-body">
+      <ng-content select=".control-body"></ng-content>
+    </div>
+  </fg-modal>
+</div>
+
+<!-- editing with tabs -->
+<div *ngIf=" controller === 'tab' ">
+  <tabset>
+    <tab heading="Basic title" id="tab1">Basic content</tab>
+    <tab heading="Basic Title 1">Basic content 1</tab>
+    <tab heading="Basic Title 2">Basic content 2</tab>
+  </tabset>
+</div>

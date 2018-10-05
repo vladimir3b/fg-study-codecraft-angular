@@ -194,6 +194,7 @@ import { FullNameTextareaComponent } from './study/components/full-name-textarea
 import { FullNameChangerComponent } from './study/components/full-name-changer/full-name-changer.component';
 import { NewFriendFormComponent } from './study/components/new-friend-form/new-friend-form.component';
 import { ChildComponentWithObjectAsPropertyComponent } from './study/components/child-component-with-object-as-property/child-component-with-object-as-property.component';
+import { ModalToTabComponent } from './study/components/modal-to-tab/modal-to-tab.component';
 
 @NgModule({
   declarations: [
@@ -363,7 +364,8 @@ import { ChildComponentWithObjectAsPropertyComponent } from './study/components/
     FullNameTextareaComponent,
     FullNameChangerComponent,
     NewFriendFormComponent,
-    ChildComponentWithObjectAsPropertyComponent
+    ChildComponentWithObjectAsPropertyComponent,
+    ModalToTabComponent
   ],
   imports: [
     NgxDatatableModule,

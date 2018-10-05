@@ -11,7 +11,7 @@ import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 })
 export class Study10Component implements OnInit {
 
-  public showEditModal: boolean;
+  public activateEdit: boolean;
   public numberOfFriendsListed: number = 10;
   public myFriends: Array<IFriend> = MY_FRIENDS;
   public startItem: number;
@@ -27,6 +27,7 @@ export class Study10Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.activateEdit = false;
     this.startItem = 0;
     this.endItem = this.numberOfFriendsListed;
   }
@@ -40,17 +41,18 @@ export class Study10Component implements OnInit {
     console.log('Data were recived', $event);
   }
 
-  public editFriend(index): void {    
+  public editFriend(index): void {        
     this.editedFriendIndex = index;
+    this.activateEdit = true;
   }
 
   public hideEdit(): void {
-    this.showEditModal = false;
+    this.activateEdit = false;
   }
   
-  public showEdit(): void {
-    this.showEditModal = true;
-  }
+  // public showEdit(): void {
+  //   this.showEditModal = true;
+  // }
 
 
 }

@@ -13,10 +13,7 @@
   <div class="col-1 font-weight-bold">Gender</div>
   <div class="col-3 font-weight-bold">Functions</div>
 </div>
-<div 
-  *ngFor="let friend of myFriends | slice:startItem:endItem; let index=index"
-  class="row p-1"
-  [ngClass]="{'bg-light': index%2 === 1}">
+<div *ngFor="let friend of myFriends | slice:startItem:endItem; let index=index" class="row p-1" [ngClass]="{'bg-light': index%2 === 1}">
   <div class="col-1 text-right">{{ startItem + index + 1 }}</div>
   <div class="col-2">{{ friend.name.firstName }}</div>
   <div class="col-2">{{ friend.name.middleName }}</div>
@@ -24,9 +21,7 @@
   <div class="col-1">{{ friend.age }}</div>
   <div class="col-1">{{ friend.gender }}</div>
   <div class="col-3">
-    <button 
-      (click)="editFriend(startItem + index); showEdit(); editMyFriend.show();"
-      class="btn btn-outline-success btn-sm">
+    <button (click)="editFriend(index)" class="btn btn-outline-success btn-sm">
       Edit
     </button>&nbsp;
     <button class="btn btn-outline-danger btn-sm">Delete</button>
@@ -37,30 +32,19 @@
 </div>
 <div class="row">
   <div class="col">
-    <pagination 
-      [boundaryLinks]="true" 
-      [maxSize]="5"
-      [itemsPerPage]="numberOfFriendsListed"
-      [totalItems]="myFriends.length"
+    <pagination [boundaryLinks]="true" [maxSize]="5" [itemsPerPage]="numberOfFriendsListed" [totalItems]="myFriends.length"
       (pageChanged)="pageChanged($event)">
     </pagination>
   </div>
 </div>
 
-<!-- editing modal -->
-<fg-modal
+
+<!-- <fg-modal
   [maximizable]="true"
   [width]="640"
   [minWidth]="600"
   #editMyFriend> 
-  <div 
-    *ngIf="showEditModal" 
-    class="app-modal-header">
-    <h5>
-      Edit friend {{ editedFriend.name.firstName }} 
-      {{ editedFriend.name.lastName }}
-    </h5>
-  </div>
+
   <div 
     *ngIf="showEditModal"
     class="container app-modal-body">    
@@ -69,15 +53,22 @@
       (myFriendChange)="editMyFriend.hide(); hideEdit();">  
     </fg-app-new-friend-form>
   </div>   
-</fg-modal>
+</fg-modal> -->
 
-
-<!-- editing tabs -->
-
-<!-- <div>
-  <tabset>
-    <tab heading="Basic title" id="tab1">Basic content</tab>
-    <tab heading="Basic Title 1">Basic content 1</tab>
-    <tab heading="Basic Title 2">Basic content 2</tab>
-  </tabset>
-</div> -->
+<fg-app-modal-to-tab 
+  *ngIf='activateEdit'
+  [controller]="'modal'"
+  (close)="activateEdit=false">
+  <div class="control-header">
+    <h5>
+      Edit friend {{ editedFriend.name.firstName }} 
+      {{ editedFriend.name.lastName }}
+    </h5>
+  </div>
+  <div class="control-body">
+    <fg-app-new-friend-form
+      [(myFriend)]="editedFriend"
+      (myFriendChange)="hideEdit();">  
+    </fg-app-new-friend-form>
+  </div>
+</fg-app-modal-to-tab>
